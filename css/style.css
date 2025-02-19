@@ -63,7 +63,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url('../assets/bg_banner.jpg') no-repeat center;
+  background: url('../assets/banner.png') no-repeat center;
   background-size: cover;
   z-index: 1;
   background-attachment: fixed;
@@ -667,20 +667,24 @@ body {
   .discussionSection .imageContainerdata {
     margin-left: 1rem;
   }
+
   .discussionSection .contentContainerdata {
     padding: 2rem 3rem;
     text-align: center;
   }
+
   .discussionSection .screenshotImage {
     width: 100%;
   }
+
   .member .contentContainer {
     padding: 0;
     text-align: center;
   }
+
   .discussionSection .imageContainerTOP {
     margin: 0;
-    width: 100% ;
+    width: 100%;
     padding: 0 2rem;
   }
 
@@ -806,25 +810,32 @@ image13 {
 .messageContainer {
   position: relative;
   display: flex;
-  justify-content: flex-end; /* Changed from space-between to flex-end */
+  justify-content: flex-end;
+  /* Changed from space-between to flex-end */
   align-items: center;
-  gap: 40px; /* Increased gap for better spacing */
+  gap: 40px;
+  /* Increased gap for better spacing */
   z-index: 1;
-  padding: 0 20px; /* Added horizontal padding */
+  padding: 0 20px;
+  /* Added horizontal padding */
   max-width: 1200px;
   margin: 0 auto;
 }
+
 .textContent {
-  flex: 0 1 30%; 
-  min-width: 220px;  /* 確保最小寬度 */
+  flex: 0 1 30%;
+  min-width: 220px;
+  /* 確保最小寬度 */
 }
 
 .headlineWrapper1 {
   font: 700 20px/1.6 "Noto Sans JP", Helvetica, Arial, serif;
   color: #053657;
   letter-spacing: 1.6px;
-  max-width: 45%; /* Reduced max-width to bring text closer to image */
-  margin-right: auto; /* Pushes content to the right */
+  max-width: 45%;
+  /* Reduced max-width to bring text closer to image */
+  margin-right: auto;
+  /* Pushes content to the right */
 }
 
 .headlineWrapper1_span1 {
@@ -840,7 +851,8 @@ image13 {
 }
 
 .imageContent {
-  flex: 0 0 50%; /* 固定圖片容器寬度，不伸展不收縮 */
+  flex: 0 0 50%;
+  /* 固定圖片容器寬度，不伸展不收縮 */
   display: flex;
   justify-content: flex-end;
 }
@@ -849,7 +861,8 @@ image13 {
   width: 400px;
   height: auto;
   object-fit: contain;
-  flex-shrink: 0; /* Prevents image from shrinking */
+  flex-shrink: 0;
+  /* Prevents image from shrinking */
 }
 
 /* Responsive Design */
@@ -857,14 +870,15 @@ image13 {
   .backgroundAccent1 {
     width: 100%;
     position: absolute;
-    top:15%;
+    top: 15%;
     height: 200px;
     background-color: rgb(240, 240, 240);
   }
 
   .messageContainer {
-    gap: 20px; /* Reduced gap for smaller screens */
-    padding: 5px ;
+    gap: 20px;
+    /* Reduced gap for smaller screens */
+    padding: 5px;
     width: 100%;
   }
 
@@ -872,11 +886,11 @@ image13 {
     font-size: 18px;
     max-width: 50%;
   }
-  
+
   .headlineWrapper1_span1 {
     font-size: 28px;
   }
-  
+
   .attendance_1 .illustrationImage2 {
     width: 400px;
   }
@@ -901,9 +915,10 @@ image13 {
 
 @media (max-width: 576px) {
   .backgroundAccent1 {
-    top:-5%;
+    top: -5%;
   }
 }
+
 /* 主題3-1 end */
 
 /* 圖表區域 */
@@ -980,7 +995,7 @@ image13 {
   width: 100%;
   height: 90px;
   font: 700 15px/1.6 "Noto Sans JP", Helvetica, Arial, serif;
-  color: #053657;
+  color: #e60a0f;
   text-align: center;
   background-color: #eaeaea;
   padding: 33px 12px;
@@ -1665,6 +1680,7 @@ image13 {
   margin: 0.5rem auto;
   width: 80%;
 }
+
 .card.padding2 {
   margin: 1rem auto;
   width: 100%;
@@ -1693,6 +1709,8 @@ image13 {
   border-radius: 20px;
   margin: 0.5rem;
   display: inline-block;
+  width: fit-content;
+
 }
 
 .tag2 {
@@ -1758,33 +1776,63 @@ image13 {
   margin: 10px 0 10px 10px;
 }
 
-/* 左側（帶標籤的圖片區塊） */
+/* 2/18 測試 */
+
+/* 左側區塊基本樣式 */
 .card-left {
   width: 45%;
   min-height: 100%;
   position: relative;
   border-radius: 10px 0 0 10px;
+  display: flex;
+  flex-direction: column;
 }
 
-/* 新增背景圖片容器 */
-.card-left::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  /* 上方留出 25% 空間 */
-  left: 0;
+/* 新增圖片容器 */
+.card-left .image-container {
+  position: relative;
   width: 100%;
   height: 100%;
-  background: url('../assets/right_img05-3.png') no-repeat center;
-  background-size: cover;
-  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
 }
 
-/* 確保標籤在圖片上層 */
+/* 背景圖片樣式 */
+.card-left .background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  margin: 0 2%;
+}
+
+/* 標籤樣式 */
 .card-left .tag {
   position: relative;
   z-index: 2;
-  margin-left: 10%;
+  margin-left: 5%;
+  width: fit-content;
+}
+
+/* 媒體查詢部分 */
+@media screen and (max-width: 816px) {
+  .card-left {
+    width: 100%;
+    min-height: 200px;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .card-left .tag {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .card-left {
+    min-height: 180px;
+  }
 }
 
 
@@ -1799,21 +1847,6 @@ image13 {
   /* 調整卡片內容排列方式 */
   .card .inner {
     flex-direction: column;
-  }
-
-  /* 左側區塊調整 */
-  .card-left {
-    width: 100%;
-    min-height: 200px;
-    /* 設定固定最小高度 */
-    border-radius: 10px 10px 0 0;
-    /* 調整圓角只在上方 */
-  }
-
-  /* 調整背景圖片位置和大小 */
-  .card-left::before {
-    top: 30%;
-    height: 80%;
   }
 
   /* 右側區塊調整 */
@@ -1865,18 +1898,10 @@ image13 {
     left: 35%;
     bottom: -10%;
   }
-
-  .card-left .tag {
-    margin-left: 0;
-  }
 }
 
 /* 更小螢幕的額外調整 */
 @media screen and (max-width: 480px) {
-  .card-left {
-    min-height: 180px;
-  }
-
   .card-right {
     padding: 1rem;
   }
@@ -1889,6 +1914,8 @@ image13 {
     font-size: 13px;
   }
 }
+
+/* 2/18 測試 */
 
 /* 卡片內其他文字 */
 .chart-wrapper2 h4 {
@@ -1903,6 +1930,18 @@ image13 {
   line-height: 1.4;
   margin: 0 10px;
 }
+
+.chart-wrapper2 li {
+  font-size: 14px;
+  display: list-item;
+  list-style-type: disc;
+  list-style-position: inside;
+  margin-top: 10px 10px;
+  padding: 3px 0;
+  line-height: 1.5;
+}
+
+
 
 /* 兩欄區塊 */
 .stats-container {
@@ -2110,10 +2149,11 @@ image13 {
   padding: 20px;
   max-height: 70vh !important;
 }
+
 @media screen and (max-width: 816px) {
   .imageContainer.card {
     width: 100%;
- }
+  }
 }
 
 /* chartsWrapper 用於橫向排列兩頁 */
@@ -2367,6 +2407,7 @@ image13 {
 
 /* 額外的敘述文字 */
 .statisticsDescription.extra {
+  display: block;
   font-size: 14px;
   color: #fff;
   min-height: 50px;
@@ -2379,6 +2420,7 @@ image13 {
   .contentContainer.red {
     background-color: #f5f5f5 !important;
     margin: 0 auto;
+    margin-top: -20%;
     padding: 0;
   }
 
@@ -2387,12 +2429,19 @@ image13 {
   }
 
   .statisticsContent2.hide {
-    opacity: 0.4;
+    position: absolute;
+    /* 絕對定位 */
+    top: 0;
+    left: 0;
+    width: 80%;
+    transition: opacity 0.3s ease;
+    opacity: 0;
     color: #333;
   }
 
   .statisticsDescription.extra {
-    color: #fff;
+    color: #333;
+    width: 80%;
   }
 
   /* 調整容器布局 */
@@ -2404,7 +2453,7 @@ image13 {
   .imageContainer.sticky {
     position: relative;
     height: auto !important;
-    padding: 3rem 1rem;
+    padding: 1rem 1rem;
     margin: 0 auto;
   }
 
@@ -2745,6 +2794,17 @@ image13 {
   gap: 10px;
 }
 
+/* RWD 設定 */
+@media screen and (max-width: 768px) {
+  .contentContainer {
+      order: 1; /* 確保文字永遠在上方 */
+  }
+
+  .imageContainer {
+      order: 2; /* 確保圖片永遠在下方 */
+  }
+}
+
 .screenshotImage {
   width: 90%;
   height: auto;
@@ -2793,6 +2853,11 @@ image13 {
   background-color: transparent;
   width: 80%;
   margin: 10px auto;
+}
+
+.content .statisticsWrapper {
+  display: flex;
+  flex-direction: row;
 }
 
 .statisticsContent1 {
@@ -2949,32 +3014,32 @@ image13 {
 /* RWD 版本樣式 */
 @media screen and (max-width: 816px) {
   .desktop-version {
-      display: none;
+    display: none;
   }
-  
+
   .mobile-version {
-      display: block;
+    display: block;
   }
-  
+
   .statisticsDescription.mobile {
-      padding: 15px;
-      margin: 0;
+    padding: 15px;
+    margin: 0;
   }
-  
+
   .titleContainer1 {
-      padding: 20px;
-      text-align: center;
+    padding: 20px;
+    text-align: center;
   }
-  
+
   .imageContainer {
-      width: 100%;
-      text-align: center;
+    width: 100%;
+    text-align: center;
   }
-  
+
   .imageContainer img {
-      max-width: 100%;
-      height: auto;
-      margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;
   }
 }
 
@@ -3391,7 +3456,7 @@ image13 {
 }
 
 .aboutIllustration {
-  width: 100px;
+  height: 80px;
   min-width: 0;
   -o-object-fit: contain;
   object-fit: contain;
@@ -3400,6 +3465,18 @@ image13 {
 }
 
 .aboutIllustration:hover {
+  transform: translateY(-10%);
+}
+
+.helperIllustration {
+  height: 80px;
+  min-width: 0;
+  -o-object-fit: contain;
+  object-fit: contain;
+  transition: all 0.6s ease;
+}
+
+.helperIllustration:hover {
   transform: translateY(-10%);
 }
 
