@@ -428,6 +428,17 @@ body {
   font-size: 14px;
   line-height: 1.5;
   padding: 12px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height:120px;
+  width: 70%;
+  transition: all 0.6s ease;
+}
+
+.collabDescription.about:hover {
+  min-height:136px;
+  line-height: 1.8;
 }
 
 .collabDescription p {
@@ -436,13 +447,20 @@ body {
 
 .imageContainer img {
   max-width: 600px;
-  width: 70%;
+  width: 90%;
   height: auto;
   margin: 0 auto;
 }
 
+.imageContainerTOP3 {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
 .imageContainerTOP3 img {
   max-width: 600px;
+  align-self: center;
   width: 90%;
   height: auto;
   margin: 15px auto;
@@ -1185,7 +1203,7 @@ image13 {
 .indicatorRow {
   position: absolute;
   transition: all 0.6s ease;
-  bottom: 15px;
+  bottom: 12px;
   left: 50%;
   opacity: 1;
   transform: translateX(-50%);
@@ -1193,10 +1211,22 @@ image13 {
   align-content: center;
   justify-content: center;
   gap: 0 18px;
-  width: 69px;
   max-width: 85%;
   z-index: 10;
   margin-top: 5px;
+  padding: 6px 9px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+}
+
+.card-indicatorRow2:hover,
+.card-indicatorRow:hover,
+.indicatorRow:hover {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(3px);
+  /* 模糊濾鏡 */
+  -webkit-backdrop-filter: blur(3px);
+  /* Safari 需要加這一行 */
 }
 
 .card-indicatorRow2 {
@@ -1646,7 +1676,6 @@ image13 {
   align-items: center;
   gap: 5%;
   width: 100%;
-  padding: 2% 5%;
 }
 
 .cards .card {
@@ -1664,6 +1693,7 @@ image13 {
 .card .inner {
   padding: 0;
   display: flex;
+
 }
 
 .card {
@@ -1678,7 +1708,17 @@ image13 {
 
 .card.padding {
   margin: 0.5rem auto;
-  width: 80%;
+  width: 88%;
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+.card.padding:hover {
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
 }
 
 .card.padding2 {
@@ -1697,6 +1737,29 @@ image13 {
 
 .card .chart-wrapper2 {
   flex-direction: column;
+}
+
+.chart-wrapper2 .innerWrapper {
+  min-width: 98%;
+  max-height: 100%;
+  padding: 0;
+  display: block;
+}
+
+.innerWrapper .flourish-embed {
+  transform: scale(0.9);
+  transform-origin: top center;
+  /* 確保從頂部開始縮放 */
+  margin: 0;
+  /* 水平置中 */
+  width: 100% !important;
+  position: relative;
+  top: 0;
+}
+
+.chart-wrapper2 h3 {
+  font-weight: 700;
+  color: rgb(170, 40, 35);
 }
 
 /* 標籤（紅色圓角標籤） */
@@ -1768,20 +1831,33 @@ image13 {
 
 /* 卡片頂部圖片 */
 .card-top {
-  width: 90% !important;
-  height: 180px;
+  width: 50% !important;
+  /* 將寬度從80%改為50% */
+  height: auto;
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  margin: 10px 0 10px 10px;
+  margin: 10px auto 10px auto !important;
+  /* 修改margin，讓圖片置中且只保留底部間距 */
+  display: block;
+  /* 確保圖片置中 */
 }
 
-/* 2/18 測試 */
+/* 卡片底部圖片 */
+.card-bottom {
+  width: 100% !important;
+  max-height: 100%;
+  margin-top: 5% !important;
+  object-fit: cover;
+  border-radius: 0 0 12px 12px;
+}
+
 
 /* 左側區塊基本樣式 */
 .card-left {
-  width: 45%;
-  min-height: 100%;
+  width: 38%;
+  min-height: 300px;
+  max-width: 500px;
   position: relative;
   border-radius: 10px 0 0 10px;
   display: flex;
@@ -1794,8 +1870,8 @@ image13 {
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   flex-grow: 1;
 }
 
@@ -1805,12 +1881,15 @@ image13 {
   height: 100%;
   object-fit: cover;
   z-index: 1;
-  margin: 0 2%;
+  margin: 0;
+  border-radius: 10px 0 0 10px;
 }
 
 /* 標籤樣式 */
 .card-left .tag {
-  position: relative;
+  position: absolute;
+  top: 20px;
+  left: 20px;
   z-index: 2;
   margin-left: 5%;
   width: fit-content;
@@ -1822,10 +1901,21 @@ image13 {
     width: 100%;
     min-height: 200px;
     border-radius: 10px 10px 0 0;
+    margin: 0 auto;
   }
 
   .card-left .tag {
     margin-left: 0;
+  }
+
+  /* 背景圖片樣式 */
+  .card-left .background-image {
+    border-radius: 10px;
+    margin: 5% auto;
+  }
+
+  .card-top {
+    width: 60% !important;
   }
 }
 
@@ -1833,14 +1923,48 @@ image13 {
   .card-left {
     min-height: 180px;
   }
+  .card-top {
+    width: 100% !important;
+  }
 }
 
 
 .card-right {
-  width: 55%;
+  width: 62%;
   height: 100%;
   padding: 2rem;
+  margin: o auto;
 }
+
+.card-right .chart-wrapper {
+  width: 100%;
+  margin: 0 auto;
+  /* Center the chart */
+}
+
+.card-right .chart-wrapper2 {
+  width: 100% !important;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 480px) {
+  .card-right .chart-wrapper2 {
+    margin: 0;
+  }
+
+}
+
+
+/* Flourish chart container */
+.card-right .flourish-embed {
+  transform: scale(0.8);
+  /* Reduces size to 50% */
+  transform-origin: center center;
+  /* Centers the scaling */
+  margin-top: -10%;
+  margin-bottom: -10%;
+}
+
 
 @media screen and (max-width: 816px) {
 
@@ -1851,7 +1975,7 @@ image13 {
 
   /* 右側區塊調整 */
   .card-right {
-    width: 80%;
+    width: 100%;
     padding: 1.5rem;
     margin: 0 auto;
   }
@@ -1881,7 +2005,7 @@ image13 {
 
   /* 調整整體卡片容器 */
   .cards {
-    padding: 1rem;
+    padding: 2% 5%;
   }
 
   .card {
@@ -1895,13 +2019,23 @@ image13 {
 
   /* 指示器位置調整 */
   .card-indicatorRow2 {
-    left: 35%;
-    bottom: -10%;
+    bottom: -20%;
+    left: 45%;
   }
+
+  .card-right .flourish-embed {
+    transform: scale(1.0);
+    margin: 0;
+  }
+
 }
 
 /* 更小螢幕的額外調整 */
 @media screen and (max-width: 480px) {
+  .case .inner {
+    min-height: 1150px;
+  }
+
   .card-right {
     padding: 1rem;
   }
@@ -1913,14 +2047,22 @@ image13 {
   .description {
     font-size: 13px;
   }
-}
 
-/* 2/18 測試 */
+  /* 指示器位置調整 */
+  .card-indicatorRow2 {
+    left: 35%;
+    bottom: -30%;
+  }
+
+  .card-right .chart-wrapper {
+    margin-bottom: 20%;
+  }
+}
 
 /* 卡片內其他文字 */
 .chart-wrapper2 h4 {
   font-size: 18px;
-  margin: 10px 10px 5px;
+  margin: 1px 2px 0px 2px;
   color: rgb(230, 10, 15);
   font-weight: bold;
 }
@@ -1928,7 +2070,7 @@ image13 {
 .chart-wrapper2 p {
   font-size: 14px;
   line-height: 1.4;
-  margin: 0 10px;
+  margin: 0 2px;
 }
 
 .chart-wrapper2 li {
@@ -1970,10 +2112,12 @@ image13 {
 
 /* 每個類別區塊 */
 .stats-category {
-  padding: 0 1px;
-  text-align: center;
-  margin-bottom: 10px;
+  padding: 0 0 0 1rem;
+  text-align: left;
+  margin: 1.5rem auto;
+  width: 90%;
   min-width: 150px;
+  font-size: 14px;
 }
 
 /* 紅色標籤 */
@@ -2144,15 +2288,19 @@ image13 {
 .imageContainer.card {
   flex-direction: row;
   overflow-x: hidden;
+  overflow-y: hidden;
   position: relative;
   display: block;
-  padding: 20px;
+  padding: 4px 20px;
   max-height: 70vh !important;
 }
 
 @media screen and (max-width: 816px) {
   .imageContainer.card {
     width: 100%;
+    max-height: 150vh !important;
+    overflow-y: visible;
+
   }
 }
 
@@ -2179,8 +2327,6 @@ image13 {
   width: 50%;
   display: flex;
   justify-content: center;
-  padding: 10px;
-  /* 如有需要可調整內邊距 */
 }
 
 /* 圖表區塊3設定：彼此重疊 */
@@ -2249,7 +2395,7 @@ image13 {
   display: flex;
   flex-shrink: 0;
   justify-content: center;
-  padding: 10px;
+  padding: 0 1.2rem;
   /* 如有需要可調整內邊距 */
 }
 
@@ -2257,9 +2403,7 @@ image13 {
   width: 50%;
   display: flex;
   flex-shrink: 0;
-  justify-content: center;
-  padding: 10px;
-  /* 如有需要可調整內邊距 */
+  justify-content: flex-start;
 }
 
 .page1.flourish-chart {
@@ -2358,6 +2502,172 @@ image13 {
   padding: 6rem 2rem;
 }
 
+/* Base container styles */
+.contentContainer.red {
+  background-color: #d83838;
+  color: white;
+  padding: 2rem;
+}
+
+.statisticsContent3 {
+  position: relative;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+/* Category header styles */
+.category-header {
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.category-header h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* TOP3 section styles */
+.top3-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 2rem auto;
+  gap: 1rem;
+}
+
+.top3-title {
+  color: #000;
+  font-size: 1.2rem !important;
+  text-align: center;
+  margin: 0 !important;
+  line-height: 1.4;
+}
+
+.top3-circles {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 1rem 0;
+  padding: 0;
+  width: 100%;
+  max-width: 400px;
+}
+
+.circle-container {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.top-circle {
+  width: 70px;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.top-circle:hover {
+  transform: scale(1.05);
+}
+
+.top-circle img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+.top-circle .tooltip {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.top-circle:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: -45px;
+}
+
+/* Statistics description styles */
+.statisticsDescription {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1440px) {
+  .statisticsContent3 {
+    margin-top: 2rem;
+  }
+
+  .top3-container {
+    margin: 0 auto;
+  }
+
+  .statisticsDescription {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 816px) {
+  .top3-container {
+    width: 70%;
+  }
+
+
+  .top3-circles {
+    gap: 1.5rem;
+    max-width: 300px;
+    margin: 1rem auto;
+  }
+
+  .top-circle {
+    width: 60px;
+    height: 60px;
+  }
+
+  .top3-title {
+    font-size: 1.2rem !important;
+    margin: 0 auto;
+  }
+
+  .circle-container {
+    transform: scale(0.9);
+  }
+}
+
+@media (max-width: 480px) {
+  .top-circle {
+    width: 50px;
+    height: 50px;
+  }
+
+  .top3-title {
+    font-size: 1rem !important;
+    margin: 1rem 0 0.5rem;
+  }
+
+  .circle-container {
+    transform: scale(0.85);
+  }
+}
 
 /* 長條圖容器 */
 .bar-chart {
@@ -2410,9 +2720,10 @@ image13 {
   display: block;
   font-size: 14px;
   color: #fff;
+  width: 80%;
   min-height: 50px;
-  margin-left: 24px;
-
+  margin: 0 auto;
+  padding-left: 6px;
 }
 
 /* 響應式設計 - 小於816px的螢幕 */
@@ -2420,9 +2731,10 @@ image13 {
   .contentContainer.red {
     background-color: #f5f5f5 !important;
     margin: 0 auto;
-    margin-top: -20%;
+    margin-top: 0;
     padding: 0;
   }
+
 
   .statisticsWrapperRight {
     margin: 0 !important;
@@ -2459,9 +2771,62 @@ image13 {
 
 }
 
-/* 圖表區域 3-2開始_0211 */
+@media (max-width: 480px) {
+  .family .statisticsContent2 {
+    min-width: 300px;
+  }
+}
 
-/* 圖表區域 3-2開始_0211 */
+.overlapping-images {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin: 2rem 0;
+}
+
+@media (max-width: 816px) {
+  .overlapping-images {
+    height: 400px;
+    margin: 1rem 0;
+  }
+}
+@media (max-width: 480px) {
+  .overlapping-images {
+    height: 300px;
+    margin: 0;
+  }
+}
+
+
+.account-image {
+  position: absolute;
+  transition: z-index 0.1s, transform 0.3s ease;
+}
+
+.account-1 {
+  left: 10%;
+  top: 0;
+  width: 60%;
+  z-index: 0;
+}
+
+.account-2 {
+  right: 10%;
+  top: 20%;
+  width: 60%;
+  z-index: 1;
+}
+
+.account-1:hover {
+  z-index: 2;
+  transform: scale(1.05);
+}
+
+.account-2:hover {
+  z-index: 2;
+  transform: scale(1.05);
+}
+
 
 /* 圖表區域 1-1開始 */
 .discussionSection {
@@ -2499,9 +2864,7 @@ image13 {
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 25px;
-  margin-left: 1.5rem;
   width: 100%;
-  max-width: 1200px;
 }
 
 @media (max-width: 816px) {
@@ -2605,7 +2968,7 @@ image13 {
 
 /* 設置Flourish圖表和內容方格 */
 .imageContainer {
-  flex: 1 1 55%;
+  flex: 1 1 50%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -2613,12 +2976,27 @@ image13 {
   max-width: 800px;
 }
 
+.contentWrapper4 .imageContainer {
+  justify-items: flex-end;
+  justify-self: flex-end;
+}
+
+.event .imageContainer {
+  flex: 1 1 40%;
+}
+
+.event .contentContainer {
+  flex: 1 1 60%;
+}
+
+
+
 /* 設置Flourish圖表和內容方格 */
 .imageContainerTOP {
-  flex: 1 1 55%;
+  flex: 1 1 45%;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: flex-start;
   max-width: 800px;
   margin-top: 1rem;
@@ -2736,13 +3114,18 @@ image13 {
 
 /* 文字方格的格式  */
 .contentContainer {
-  flex: 1 1 45%;
-  /* 文字方格和圖片占45%寬度 */
+  flex: 1 1 50%;
+  min-width: 200px;
+  width: 100%;
   display: flex;
   margin: 0 auto;
-  padding-left: 1.5rem;
   flex-direction: column;
   gap: 10px;
+  padding: 20px;
+}
+
+.contentContainer.left {
+  padding-left: 0 !important;
 }
 
 .contentContainer.red {
@@ -2763,6 +3146,7 @@ image13 {
 }
 
 /* 文字方格的格式  */
+.titleContainer1 h3,
 .contentContainer h3 {
   font: 700 20px/1.5 "GenJyuuGothic", Helvetica, Arial, serif;
   color: #000;
@@ -2789,7 +3173,7 @@ image13 {
   flex: 1 1 10%;
   display: flex;
   margin-right: 50px;
-  padding-left: 1.5rem;
+  padding-left: 0rem;
   flex-direction: column;
   gap: 10px;
 }
@@ -2797,21 +3181,44 @@ image13 {
 /* RWD 設定 */
 @media screen and (max-width: 768px) {
   .contentContainer {
-      order: 1; /* 確保文字永遠在上方 */
+    order: 1;
+    /* 確保文字永遠在上方 */
   }
 
   .imageContainer {
-      order: 2; /* 確保圖片永遠在下方 */
+    order: 0;
+    /* 確保圖片永遠在下方 */
   }
 }
 
 .screenshotImage {
   width: 90%;
+  max-height: 280px;
   height: auto;
-  border-radius: 24px;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: all 0.6s ease-in;
   margin: 20px auto;
+}
+
+.screenshotImage.shadow {
+  box-shadow: 2px 2px 18px rgba(0, 0, 0, 0.3);
+}
+
+.screenshotImage.shadow:hover {
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.screenshotImage.bdrdis {
+  border-radius: 24px;
+}
+
+.screenshotImage.bdrdis:hover {
+  border-radius: 12px;
+}
+
+
+.TOP .screenshotImage {
+  max-height: 400px;
 }
 
 .statisticsWrapper {
@@ -2858,7 +3265,14 @@ image13 {
 .content .statisticsWrapper {
   display: flex;
   flex-direction: row;
+  width:95%;
+  margin: 1rem auto !important;
 }
+@media (max-width: 480px) {
+  .content .statisticsWrapper {
+    margin: 10px auto !important;
+  }
+  }
 
 .statisticsContent1 {
   flex: 1;
@@ -2939,7 +3353,7 @@ image13 {
   display: flex;
   align-items: center;
   text-align: justify;
-  width: 90%;
+  width: 100%;
   font-family: 'GenJyuuGothic', sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -2951,6 +3365,7 @@ image13 {
 
 .statisticsContent2 .statisticsDescription {
   padding-bottom: 0;
+  line-height: 1.2;
 }
 
 /* 3-2測試 */
@@ -2982,11 +3397,7 @@ image13 {
   background-color: #f5f5f5;
 }
 
-.contentContainer {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
+
 
 .sticky {
   position: sticky;
@@ -3009,6 +3420,30 @@ image13 {
 .chart-wrapper {
   margin: 20px 0;
   width: 100%;
+}
+
+.chart-wrapper.pay {
+  margin: 0;
+  height: 50vh;
+  /* 控制容器高度 */
+  overflow: hidden;
+  /* 防止內容溢出 */
+  transform-origin: top center;
+  /* 設置變形的原點在頂部中心 */
+}
+
+.pay .flourish-embed {
+  transform: scale(0.5);
+  transform-origin: top left;
+  /* 確保從頂部開始縮放 */
+  margin: 0;
+  /* 水平置中 */
+  width: 200% !important;
+  /* 因為縮小後需要補償寬度 */
+  position: relative;
+  /* 設置定位 */
+  top: 0;
+  /* 貼齊頂部 */
 }
 
 /* RWD 版本樣式 */
@@ -3037,7 +3472,7 @@ image13 {
   }
 
   .imageContainer img {
-    max-width: 100%;
+    max-width: 90%;
     height: auto;
     margin: 20px auto;
   }
@@ -3413,9 +3848,9 @@ image13 {
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 12px;
   box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(4px);
   /* 設置模糊濾鏡 */
-  -webkit-backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(4px);
   /* 兼容 Safari */
   border: 2px solid rgba(255, 255, 255, 0.1);
 }
@@ -3470,10 +3905,12 @@ image13 {
 
 .helperIllustration {
   height: 80px;
-  min-width: 0;
+  min-width:88px;
+  width: 80%;
   -o-object-fit: contain;
   object-fit: contain;
   transition: all 0.6s ease;
+  margin-left: 0 auto;
 }
 
 .helperIllustration:hover {
@@ -3511,8 +3948,9 @@ image13 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px 0;
-  margin: 33px 26px 11px 25px;
+  gap: 12px 0;
+  margin: 32px 24px 24px 24px;
+  font-size: 14px;
 }
 
 @media screen and (max-width: 816px) {
@@ -3647,10 +4085,10 @@ image13 {
 }
 
 /* 內容區塊 */
+.contentWrapper4,
 .contentWrapper3 {
   flex: 1;
   position: relative;
-  background: url('../assets/bg_banner.jpg') no-repeat center;
   background-size: cover;
   background-attachment: fixed;
   display: flex;
@@ -3660,6 +4098,14 @@ image13 {
   color: white;
   padding: 20px;
   flex-wrap: wrap;
+}
+
+.contentWrapper3 {
+  background: url('../assets/bg_banner.jpg') no-repeat center;
+}
+
+.contentWrapper4 {
+  background: url('../assets/banner-bg-01.jpg') no-repeat center;
 }
 
 .contentWrapper3 .jkopayLogo {
@@ -3701,6 +4147,7 @@ image13 {
   text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
 }
 
+.getStartedBtn,
 .btn-red,
 .btn-white {
   display: flex;
@@ -3716,9 +4163,28 @@ image13 {
   transition: all 0.6s ease-in-out;
 }
 
+.getStartedBtn,
 .btn-red {
   background-color: #e60a0f;
   color: white;
+}
+
+.getStartedBtn {
+  margin: 2rem auto 1rem !important;
+  min-width: 18px;
+  max-width: 80%;
+  font: 700 20px/1.5 "Noto Sans JP", Helvetica, Arial, serif !important;
+  border-radius: 32px !important;
+  padding: 9px 24px !important;
+  letter-spacing: 1.6px;
+}
+
+.getStartedBtn:hover {
+  transform: scale(110%);
+  box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.15);
+  background-color: rgb(222, 60, 60);
+  border-radius: 36px !important;
+  font: 700 28px/2 "Noto Sans JP", Helvetica, Arial, serif !important;
 }
 
 .btn-red:hover {
@@ -3755,7 +4221,7 @@ image13 {
   }
 
   .card.padding {
-    width: 90%;
+    width: 92%;
     margin: 0.5rem auto;
   }
 
@@ -3931,34 +4397,6 @@ image13 {
   }
 }
 
-.getStartedBtn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 12px auto 15px;
-  width: 249px;
-  max-width: 100%;
-  font: 700 24px/2 "Noto Sans JP", Helvetica, Arial, serif;
-  color: #fff;
-  text-align: center;
-  background-color: #e60a0f;
-  border-radius: 33.5px;
-  padding: 9.5px 36px;
-  letter-spacing: 1.6px;
-  transition: all 0.6s ease-in-out;
-}
-
-.getStartedBtn:hover {
-  transform: scale(110%);
-  box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.15);
-  font: 700 30px/2 "Noto Sans JP", Helvetica, Arial, serif;
-}
-
-.getStartedBtn a {
-  color: #fff;
-  opacity: 1;
-  font: 700 24px/2 "Noto Sans JP", Helvetica, Arial, serif;
-}
 
 .partnerInfoContainer {
   z-index: 1;
