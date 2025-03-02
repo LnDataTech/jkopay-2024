@@ -155,7 +155,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
         </section>
 
         <!-- Section 0-1：合作緣起 -->
-        <section class="discussionSection section">
+        <section class="discussionSection start">
             <div class="titleContainer1">
                 <h2 class="mainHeading1">精彩的一年，你過得如何！</h2>
             </div>
@@ -174,7 +174,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                     </div>
                 </div>
             </div>
-            <div class="imageContainer">
+            <div class="imageContainer start">
                 <img src="./assets/phone.png" alt="示意圖">
             </div>
         </section>
@@ -198,8 +198,6 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                     2019至2024年期間，電子支付市場呈現穩步增長的趨勢，儘管有些年度增長幅度較小，但整體市場規模穩定上升。顯示出電子支付市場的恢復力與增長潛力。隨著未來幾年數位化趨勢的發展，市場預計將持續擴大。
                 </p>
             </div>
-        </section>
-        <section class="discussionSection section gray">
             <div class="imageContainer">
                 <div class="chart-wrapper">
                     <div class="flourish-embed flourish-chart" data-src="visualisation/18930684">
@@ -245,7 +243,6 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                     </div>
                 </div>
             </div>
-
         </section>
 
         <!-- 主題 1：行動支付最佳品牌 -->
@@ -269,54 +266,58 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                 <h2 class="mainHeading1">2024 數據回顧</h2>
             </div>
             <div class="imageContainerdata">
+                <!-- 總用戶數和用戶比例統計 -->
                 <div class="stats-grid">
-                    <div class="left-box">
-                        <div class="stats-box">
-                            <p class="stats-title">活躍用戶數 / 總用戶數</p>
-                            <p class="stats-value">1,295,759 / 6,603,252</p>
-                        </div>
-                        <div class="stats-box">
-                            <i class="stats-icon fas fa-sync-alt"></i>
-                            <p class="stats-title">總交易次數</p>
-                            <p class="stats-value">1.2 億+</p>
-                        </div>
-                    </div>
-                    <div class="right-box">
-                        <div class="stats-box">
+                    <div class="right-box full-width">
+                        <div class="stats-box user-stats-box">
+                            <div class="total-users">
+                                <p class="stats-title">總用戶數</p>
+                                <p class="stats-value text-red">6,603,252</p>
+                            </div>
                             <div class="user-stat">
-                                <p>每 <span class="highlight">7</span> 個台灣人中</p>
-                                <p>就有 <span class="highlight text-red">2</span> 個街口用戶</p>
+                                <div>
+                                    <p>每 <span class="highlight text-gray">7</span> 個台灣人中</p>
+                                    <p>就有 <span class="highlight text-red">2</span> 個街口用戶</p>
+                                </div>
                                 <div class="user-icons">
                                     <i class="fas fa-user user-red"></i>
                                     <i class="fas fa-user user-red"></i>
-                                    <i class="fas fa-user gray"></i>
-                                    <i class="fas fa-user gray"></i>
-                                    <i class="fas fa-user gray"></i>
-                                    <i class="fas fa-user gray"></i>
-                                    <i class="fas fa-user gray"></i>
+                                    <i class="fas fa-user user-gray"></i>
+                                    <i class="fas fa-user user-gray"></i>
+                                    <i class="fas fa-user user-gray"></i>
+                                    <i class="fas fa-user user-gray"></i>
+                                    <i class="fas fa-user user-gray"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- 交易金額、合作銀行、店家數統計 -->
                 <div class="stats-grid">
                     <div class="left-box">
                         <div class="stats-box">
-                            <i class="stats-icon fas fa-dollar-sign"></i>
                             <p class="stats-title">總交易金額</p>
-                            <p class="stats-value">500 億+</p>
+                            <div class="stats-icon-container">
+                                <img src="./assets/data_icon_01.png" alt="合作銀行圖標" class="stats-icon">
+                            </div>
+                            <p class="stats-value text-red">5 億<span class="plus-sign">+</span></p>
                         </div>
                         <div class="stats-box">
-                            <i class="stats-icon fas fa-university"></i>
                             <p class="stats-title">總合作銀行數</p>
-                            <p class="stats-value">29 家</p>
+                            <div class="stats-icon-container">
+                                <img src="./assets/data_icon_02.png" alt="合作銀行圖標" class="stats-icon">
+                            </div>
+                            <p class="stats-value text-red">29 家</p>
                         </div>
                     </div>
                     <div class="right-box">
                         <div class="stats-box">
-                            <i class="stats-icon fas fa-store"></i>
                             <p class="stats-title">合作店家數</p>
-                            <p class="stats-value">30萬+ 家</p>
+                            <div class="stats-icon-container">
+                                <img src="./assets/data_icon_03.png" alt="合作銀行圖標" class="stats-icon">
+                            </div>
+                            <p class="stats-value text-red">30萬 家</p>
                         </div>
                     </div>
                 </div>
@@ -324,9 +325,10 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
             <div class="contentContainerdata">
                 <h3>關於街口</h3>
                 <p class="statisticsDescription">
-                    街口支付為台灣市場中最知名的電子支付服務平台，主要目的在於提供使用者便捷且安全的電子支付體驗。利用手機應用程式作為交易介面，支持消費者於線上或實體商店中進行快速付款、金流轉換及相關消費服務，同時也提供優惠整合、積分回饋等行銷活動，協助商戶提升顧客黏著度。街口支付致力於整合多元支付功能，並透過不斷創新技術來滿足市場對行動支付安全性及效率之需求。
+                    街口支付為台灣市場中最知名的電子支付服務平台，主要目的在於提供使用者便捷且安全的電子支付體驗。利用手機應用程式作為交易介面，支援消費者於線上或實體商店中進行快速付款、金流轉換及相關消費服務，同時也提供優惠整合、積分回饋等行銷活動，協助商戶提升顧客黏著度。街口支付致力於整合多元支付功能，並透過不斷創新技術來滿足市場對行動支付安全性及效率之需求。
                 </p>
-                <img style="padding: top 1rem;" class="screenshotImage" src="./assets/jko-brand.jpg" alt="街口品牌形象照" />
+                <img style="padding: top 1rem;" class="screenshotImage bdrdis" src="./assets/jko-brand.jpg"
+                    alt="街口品牌形象照" />
             </div>
         </section>
 
@@ -500,27 +502,6 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
         </div>
     </section>
 
-    <!-- Section 1-6：合作商家持續擴大 -->
-    <section class="discussionSection section user">
-        <div class="titleContainer1">
-            <h2 class="mainHeading1">合作商家持續擴大！</h2>
-        </div>
-        <div class="contentContainer left">
-            <p class="statisticsDescription">
-                近五年，街口支付持續拓展合作店家版圖，合作店家數量持續穩定成長；從2020年的15萬家逐年增加，至2024年已達30萬家，五年間成長超過一倍，顯現出平台影響力的不斷擴大；持續吸引多樣性的商家加入電子支付的生態圈，顯示出行動支付在消費市場的滲透率提升，為使用者帶來更便利的支付體驗。
-            </p>
-        </div>
-        <div class="imageContainer">
-            <div class="chart-wrapper">
-                <div class="flourish-embed flourish-chart" data-src="visualisation/21586237">
-                    <script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img
-                            src="https://public.flourish.studio/visualisation/21586237/thumbnail" width="100%"
-                            alt="chart visualization" /></noscript>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- 主題 2：會員輪廓 -->
     <div id="profile"></div>
     <section class="breathingSpaceSection">
@@ -578,8 +559,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                             <div class="flourish-embed flourish-chart" data-src="visualisation/20957567">
                                 <script src="https://public.flourish.studio/resources/embed.js"></script>
                                 <noscript>
-                                    <img src="https://public.flourish.studio/visualisation/20957567/thumbnail" width="100%"
-                                        alt="chart visualization" />
+                                    <img src="https://public.flourish.studio/visualisation/20957567/thumbnail"
+                                        width="100%" alt="chart visualization" />
                                 </noscript>
                             </div>
                         </div>
@@ -622,10 +603,9 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 
     <!-- Section 2-3：看看你在哪裡 -->
     <section class="discussionSection section gray sticky-box">
-        <div class="imageContainer sticky" style="height: 100vh">
+        <div class="imageContainer sticky family">
             <div class="titleContainer1">
                 <h2 class="mainHeading1">街口會員大家族！看看你在哪裡？</h2>
-                <p>移動滑鼠看更多!</p>
             </div>
             <div class="chart-wrapper">
                 <div class="bar-chart">
@@ -659,30 +639,36 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
         </div>
         <div class="contentContainer red family">
             <div class="statisticsWrapperRight">
-                <div class="statisticsContent2 hide">
-                    <p class="statisticsDescription">
-                        付款筆數達20次、付款金額$20,000元達即可成為尊爵會員。尊爵可享2.5%街利存優惠、每月30次免費提領、每月30次免費跨轉，帳單繳費免手續費、1%付款回饋，以及專屬優惠。
-                    </p>
-                </div>
-                <div class="statisticsContent2 hide">
-                    <p class="statisticsDescription">
-                        付款筆數達20次、付款金額$5,000元達即可成為白金會員。白金可享2.5%街利存優惠、每月15次免費提領、每月15次免費跨轉，帳單繳費免手續費、1%付款回饋。
-                    </p>
-                </div>
-                <div class="statisticsContent2 hide">
-                    <p class="statisticsDescription">
-                        付款筆數達10次、付款金額$15,00元達即可成為金牌會員。金牌可享2%街利存優惠、每月10次免費提領、每月10次免費跨轉，帳單繳費免手續費、1%付款回饋。
-                    </p>
-                </div>
-                <div class="statisticsContent2 hide">
-                    <p class="statisticsDescription">
-                        付款筆數達3次，即可成為銀牌會員。銀牌可享2%街利存優惠、每月5次免費提領、每月5次免費跨轉，帳單繳費免手續費、1%付款回饋。
-                    </p>
-                </div>
-                <div class="statisticsContent2 hide">
-                    <p class="statisticsDescription">
-                        付款筆數 3次，即為銅牌會員。銅牌可享2%街利存優惠，以及帳單繳費免手續費。
-                    </p>
+                <div class="info-box">
+                    <p>點擊或移動滑鼠到橫條圖上看更多！</p>
+                    <img src="./assets/family.png" alt="會員等級徽章" class="badge-image">
+                    <div class="info-content-wrapper">
+                        <div class="statisticsContent2 hide">
+                            <p class="statisticsDescription">
+                                付款筆數達20次、付款金額$20,000元達即可成為尊爵會員。尊爵可享2.5%街利存優惠、每月30次免費提領、每月30次免費跨轉，帳單繳費免手續費、1%付款回饋，以及專屬優惠。
+                            </p>
+                        </div>
+                        <div class="statisticsContent2 hide">
+                            <p class="statisticsDescription">
+                                付款筆數達20次、付款金額$5,000元達即可成為白金會員。白金可享2.5%街利存優惠、每月15次免費提領、每月15次免費跨轉，帳單繳費免手續費、1%付款回饋。
+                            </p>
+                        </div>
+                        <div class="statisticsContent2 hide">
+                            <p class="statisticsDescription">
+                                付款筆數達10次、付款金額$15,00元達即可成為金牌會員。金牌可享2%街利存優惠、每月10次免費提領、每月10次免費跨轉，帳單繳費免手續費、1%付款回饋。
+                            </p>
+                        </div>
+                        <div class="statisticsContent2 hide">
+                            <p class="statisticsDescription">
+                                付款筆數達3次，即可成為銀牌會員。銀牌可享2%街利存優惠、每月5次免費提領、每月5次免費跨轉，帳單繳費免手續費、1%付款回饋。
+                            </p>
+                        </div>
+                        <div class="statisticsContent2 hide">
+                            <p class="statisticsDescription">
+                                付款筆數 3次，即為銅牌會員。銅牌可享2%街利存優惠，以及帳單繳費免手續費。
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <p class="statisticsDescription extra">
@@ -702,7 +688,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
         <div class="contentContainer left">
             <p class="statisticsDescription">2024
                 每月5日是街口會員的小確幸日子！
-                <br><br>從2、3頁的圖表數據可見，2024 年街口支付會員日的交易額及交易次數均呈現顯著成長，顯示會員日成功刺激了用戶的消費意願。相較一般日子，會員日當天整體交易次數與金額上平均都有50-150%的曾長，尤其X月的增長特別顯著。且尊爵會員貢獻特別多。
+                <br><br>從2、3頁的圖表數據可見，2024
+                年街口支付會員日的交易額及交易次數均呈現顯著成長，顯示會員日成功刺激了用戶的消費意願。相較一般日子，會員日當天整體交易次數與金額上平均都有50-150%的曾長，尤其X月的增長特別顯著。且尊爵會員貢獻特別多。
             </p>
         </div>
         <div class="imageContainer card">
@@ -728,7 +715,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                 <img src="https://public.flourish.studio/visualisation/21659845/thumbnail" width="100%"
                                     alt="chart visualization" />
                             </noscript>
-                        </div> 
+                        </div>
                     </div>
                 </div>
                 <div class="chart-wrapper2">
@@ -740,7 +727,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                 <img src="https://public.flourish.studio/visualisation/21547995/thumbnail" width="100%"
                                     alt="chart visualization" />
                             </noscript>
-                        </div> 
+                        </div>
                     </div>
                 </div>
             </div>
@@ -782,7 +769,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
         </div>
         <div class="imageContainer">
             <img class="" src="./assets/member_02.png" alt="" />
-            <a class="getStartedBtn" href="https://www.jkopay.com/application/store" target="_blank" style="transform: translateY(-50%);">成為街口用戶</a>
+            <a class="getStartedBtn" href="https://www.jkopay.com/application/store" target="_blank"
+                style="transform: translateY(-50%);">成為街口用戶</a>
         </div>
     </section>
 
@@ -1121,7 +1109,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                 </div>
             </div>
             <!-- 餐廳美食區塊 -->
-            <div class="statisticsContent2 category-block">
+            <div class="statisticsContent4">
                 <div class="titleContainer1">
                     <div class="category-header">
                         <h3>街口人超愛吃：餐廳美食</h3>
@@ -1162,8 +1150,9 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                     </div>
                 </div>
             </div>
+            
             <!-- 飲料區塊 -->
-            <div class="statisticsContent2 category-block">
+            <div class="statisticsContent4">
                 <div class="titleContainer1">
                     <div class="category-header">
                         <h3>街口人超愛喝：可口飲料</h3>
@@ -1205,7 +1194,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                 </div>
             </div>
             <!-- 遊戲區塊 -->
-            <div class="statisticsContent2 category-block">
+            <div class="statisticsContent4">
                 <div class="titleContainer1">
                     <div class="category-header">
                         <h3>街口人超愛玩：精彩遊戲</h3>
@@ -1242,8 +1231,6 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
             </div>
         </section>
     </div>
-    <!-- Section 3-4：交易產業 測試-->
-
 
     <!-- 主題3-1 -->
     <section class="workLifeBalanceSection attendance_1">
@@ -1265,7 +1252,6 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
             </div>
         </div>
     </section>
-
 
     <!-- 主題 4：理財與多元支付場景 -->
     <div id="management"></div>
@@ -1299,9 +1285,12 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                 <!-- 右邊區塊 -->
                 <div class="stats-right">
                     <div class="stats-category">
-                        <p>街口支付提供多元付款帳戶類型選擇，從各家銀行信用卡、帳戶綁定外，也有街口專屬交易帳戶；近年來更推出台新街口聯名卡、街利存帳戶等等，提供消費者更多選擇與更高回饋。
-                            <br><br>
-                            而這些有感回饋也反映在數據上，可發現台新街口聯名卡、街利存用戶在2024年都有明顯的上升趨勢。</p>
+                        <div class="contentContainer">
+                            <p> 街口支付提供多元付款帳戶類型選擇，從各家銀行信用卡、帳戶綁定外，也有街口專屬交易帳戶；近年來更推出台新街口聯名卡、街利存帳戶等等，提供消費者更多選擇與更高回饋。
+                                <br><br>
+                                而這些有感回饋也反映在數據上，可發現台新街口聯名卡、街利存用戶在2024年都有明顯的上升趨勢。
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1321,7 +1310,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
             </p>
         </div>
         <div class="imageContainer">
-            <img class="screenshotImage" src="./assets/TOP_02.png" alt="街口一站式服務" />
+            <img class="screenshotImage bdrdis" src="./assets/TOP_02.png" alt="街口一站式服務" />
         </div>
     </section>
 
@@ -1369,9 +1358,9 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
         <div class="contentContainer">
             <div class="statisticsWrapper">
                 <ul>
-                    <li>2024透過街口捐款總金額：<span class="highlight">191,581,027</span></li>
-                    <li>捐款筆數：<span class="highlight">358,628</span></li>
-                    <li>公益單位數量：<span class="highlight">476</span></li>
+                    <li>2024透過街口捐款總金額：<span class="highlight">$3億+</span></li>
+                    <li>捐款筆數：<span class="highlight">400,000+</span></li>
+                    <li>公益單位數量：<span class="highlight">250+</span></li>
                 </ul>
             </div>
             <div class="imageContainer card">
@@ -1380,22 +1369,29 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                     <div class="chart-wrapper2">
                         <!-- 第一頁卡片內容 -->
                         <img class="card-top" src="./assets/donation_01.png" alt="" />
-                        <h4>服務簡介</h4>
-                        <p>街口支付攜手創世基金會、世界展望會等，超過 200 間公益團體與捐款單位，至今累積募得逾新台幣 3
-                            億元愛心善款，提供信用卡、帳戶等多元支付，讓民眾更便利的公益參與管道，獲得廣大民眾支持推薦！</p>
+                        <div class="contentContainer cardtop">
+                            <h4>服務簡介</h4>
+                            <p>街口支付攜手創世基金會、世界展望會等，超過 200 間公益團體與捐款單位，至今累積募得逾新台幣 3
+                                億元愛心善款，提供信用卡、帳戶等多元支付，讓民眾更便利的公益參與管道，獲得廣大民眾支持推薦！</p>
+                        </div>
                     </div>
                     <div class="chart-wrapper2">
                         <!-- 第二頁卡片內容 -->
-                        <img class="card-top" src="./assets/donation_02.png" alt="" />
-                        <h4>如何用街口捐款</h4>
-                        <p>打開街口 App 之後，點選 App 首頁「公益捐款」-> 點選「公益捐款」，然後選擇捐款方式或義賣商品 -> 再點選「我要捐款 」-> 最後選擇捐款金額後，就可完成單次捐款扣款。
-                        </p>
+                        <img class="card-top phone" src="./assets/donation_02.png" alt="" />
+                        <div class="contentContainer cardtop">
+                            <h4>如何用街口捐款</h4>
+                            <p>打開街口 App 之後，點選 App 首頁「公益捐款」-> 點選「公益捐款」，然後選擇捐款方式或義賣商品 -> 再點選「我要捐款 」->
+                                最後選擇捐款金額後，就可完成單次捐款扣款。
+                            </p>
+                        </div>
                     </div>
                     <div class="chart-wrapper2">
                         <!-- 第三頁卡片內容 -->
                         <img class="card-top" src="./assets/donation_03.png" alt="" />
-                        <h4>合作對象</h4>
-                        <p>回顧至2025年1月為止，街口支付公益捐款一共攜手超過290間的公益團體夥伴、40萬的街口捐款用戶，並募得超過2.5億的愛心款項。</p>
+                        <div class="contentContainer cardtop">
+                            <h4>合作對象</h4>
+                            <p>回顧至2025年1月為止，街口支付公益捐款一共攜手超過290間的公益團體夥伴、40萬的街口捐款用戶，並募得超過2.5億的愛心款項。</p>
+                        </div>
                     </div>
                 </div>
                 <!-- 通用型指示器，供後續區塊重複使用 -->
@@ -1418,9 +1414,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
             </div>
             <div class="statisticsWrapper">
                 <ul>
-                    <li>2024透過街口繳費總金額：<span class="highlight">15,896,100</span></li>
-                    <li>繳費活躍用戶<span class="highlight">1,043,764</span></li>
-                    <li>平均每人繳費筆數：<span class="highlight">15.23</span></li>
+                    <li>2024透過街口繳費總金額：<br><span class="highlight">1600萬+</span></li>
+                    <li>平均每人繳費筆數：<span class="highlight">2.41</span></li>
                 </ul>
             </div>
             <div class="chart-wrapper">
@@ -1440,19 +1435,27 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                     <div class="chart-wrapper2">
                         <!-- 第一頁卡片內容 -->
                         <img class="card-top" src="./assets/pay_01.png" alt="" />
-                        <h4>什麼是街口繳費？</h4>
-                        <p>街口支付的「街口繳費」功能，旨在為用戶提供便捷的帳單繳納服務。透過此功能，用戶可直接在街口支付App內繳交各類帳單，免去前往各機構繳費的麻煩。</p>
+                        <div class="contentContainer cardtop">
+                            <h4>什麼是街口繳費？</h4>
+                            <p>街口支付的「街口繳費」功能，旨在為用戶提供便捷的帳單繳納服務。透過此功能，用戶可直接在街口支付App內繳交各類帳單，免去前往各機構繳費的麻煩。</p>
+                        </div>
                     </div>
                     <div class="chart-wrapper2">
                         <!-- 第二頁卡片內容 -->
                         <img class="card-top" src="./assets/pay_02.png" alt="" />
-                        <h4>支援繳費項目：</h4>
-                        <p>包含水費、電費、瓦斯費、電信費、路邊停車費、停車自動扣、有線電視費、保費、健保費、汽車代檢費、地方稅、各類罰鍰等（詳見「繳費專區」）</p>
+                        <div class="contentContainer cardtop">
+                            <h4>支援繳費項目：</h4>
+                            <p>包含水費、電費、瓦斯費、電信費、路邊停車費、停車自動扣、有線電視費、保費、健保費、汽車代檢費、地方稅、各類罰鍰等（詳見「繳費專區」）</p>
+                        </div>
                     </div>
                     <div class="chart-wrapper2">
                         <!-- 第三頁卡片內容 -->
                         <div class="chart-wrapper pay">
-                            <div class="flourish-embed flourish-chart" data-src="visualisation/21722843"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/21722843/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
+                            <div class="flourish-embed flourish-chart" data-src="visualisation/21722843">
+                                <script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img
+                                        src="https://public.flourish.studio/visualisation/21722843/thumbnail"
+                                        width="100%" alt="chart visualization" /></noscript>
+                            </div>
                         </div>
                         <h4>繳費類別排名：</h4>
                         <p>其中，停車費、電信費、電費、水費、瓦斯費穩居繳費項目前五，其餘6-10名則隨時間排名略有變動。</p>
@@ -1478,20 +1481,16 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                     <h2 class="subHeading">街利存</h2>
                     <h2 class="mainHeading1">用街口還能錢滾錢？</h2>
                 </div>
-                <div class="" style="padding-top:25%;">
+                <div class="contentContainer" style="padding-top:20%;padding-bottom:15%;">
                     <h3>什麼是街利存?</h3>
                     <p class="statisticsDescription">
                         「街利存」是由台新銀行的數位銀行服務Richart與街口支付合作推出的創新帳戶服務。透過此服務，用戶可在街口支付App內直接開立「街利存」帳戶，並將其與街口支付帳戶綁定，實現消費與儲蓄的整合。
                     </p>
-                    <p class="showout" data-index="4">截至2024用戶數(開通總數)：<span class="highlight">171,832</span></p>
-                </div>
-                <div class="showout" data-index="5">
-                    <p class="statisticsDescription">
+                    <p class="showout" data-index="4">截至2024用戶數(開通總數)：<span class="highlight">200,000+</span></p>
+                    <p class="statisticsDescription showout" data-index="5">
                         數據顯示，街利存用戶的平均交易筆數與金額都顯著高於整體用戶的平均水準，提升約70-80%，相當可觀。尤其 2023Q3 街利存用戶出現顯著高峰，遠超過同期整體用戶平均水準。
                     </p>
-                </div>
-                <div class="showout" data-index="6">
-                    <p class="statisticsDescription">
+                    <p class="statisticsDescription showout" data-index="6">
                         值得注意的是，街利存用戶的高級會員（金牌、白金與尊爵）比例明顯較高，展現比整體會員更強的黏著度和忠誠度，更傾向於在街口支付的長期使用消費。
                     </p>
                 </div>
@@ -1507,7 +1506,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                             <script src="https://public.flourish.studio/resources/embed.js"></script>
                         </div>
                     </div>
-                    <div class="" data-index="5">
+                    <div class="statisticsContent3 nobg" data-index="5">
                         <div class="flourish-embed flourish-chart" data-src="visualisation/20958579">
                             <script src="https://public.flourish.studio/resources/embed.js"></script>
                         </div>
@@ -1540,7 +1539,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                 <img src="./assets/account_02.png" alt="Account 2" class="account-image account-2">
             </div>
             <p class="statisticsDescription mobile">
-                截至2024用戶數(開通總數)：<span class="highlight">171,832</span>
+                截至2024用戶數(開通總數)：<span class="highlight">200,000+</span>
             </p>
             <div class="imageContainer">
                 <div class="chart-wrapper">
@@ -1550,8 +1549,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                 </div>
             </div>
             <p class="statisticsDescription mobile">
-                用戶每月平均交易金額/筆數與整體用戶差異(直條圖)
-                分析文字...
+                數據顯示，街利存用戶的平均交易筆數與金額都顯著高於整體用戶的平均水準，提升約70-80%，相當可觀。尤其 2023Q3 街利存用戶出現顯著高峰，遠超過同期整體用戶平均水準。
             </p>
             <div class="imageContainer">
                 <div class="chart-wrapper">
@@ -1561,8 +1559,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                 </div>
             </div>
             <p class="statisticsDescription mobile">
-                街利存用戶的交易筆數始終高於大盤用戶，顯示其較高的交易活躍度與使用頻率。特別是在
-                2023Q3，街利存用戶的交易筆數大幅提升，遠超大盤平均，凸顯該用戶群體的強勁消費力與高度黏著度，顯示街利存能有效吸引並維持高頻消費者。
+                值得注意的是，街利存用戶的高級會員（金牌、白金與尊爵）比例明顯較高，展現比整體會員更強的黏著度和忠誠度，更傾向於在街口支付的長期使用消費。
             </p>
             <div class="imageContainer">
                 <div class="chart-wrapper">
@@ -1573,8 +1570,32 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
             </div>
         </section>
     </div>
-
-
+    
+    <!-- Section 6-3：加入TWQR -->
+    <section class="discussionSection section gray" style="padding:0;">
+        <div class="left2">
+            <h2 class="subHeading">重要里程</h2>
+            <h2 class="mainHeading1">加入TWQR與其成效</h2>
+            <p class="statisticsDescription">
+                數據顯示，TWQR正式推出後，交易金額持續成長。其中，也確實帶來額外約10%的交易與用戶。
+                <br><br>
+                此外為鼓勵民眾持續使用 TWQR 服務，街口支付更推出「TWQR 春夏 10% 回饋祭」，民眾於活動期間至全台街口支付標示 TWQR 店家消費， 掃描 QR Code 付款可享最高 10% 回饋。
+                <br><br>
+                同時，為邀請更多店家加入 TWQR 行列，街口支付再推「TWQR 店家 0 手續費」活動，助全臺店家輕鬆啟用街口 TWQR，降低行動支付導入成本。
+            </p>
+        </div>
+        <div class="imageContainer">
+            <div class="chart-wrapper">
+                <div class="flourish-embed flourish-chart" data-src="visualisation/21653573">
+                    <script src="https://public.flourish.studio/resources/embed.js"></script>
+                    <noscript>
+                        <img src="https://public.flourish.studio/visualisation/21653573/thumbnail" width="100%"
+                            alt="chart visualization" />
+                    </noscript>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Section 4-7：跨境支付 -->
     <section class="discussionSection section">
         <div class="titleContainer1">
@@ -1619,7 +1640,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                     <img class="aboutIllustration" src="./assets/sum_1.png" alt="儲值icon" />
                     <div class="statisticsWrapper">
                         <ul>
-                            <li>2024 總儲值金額<span class="highlight">858.2億</span></li>
+                            <li>2024 總儲值金額<br><span class="highlight">858.2億</span></li>
                             <li>活躍用戶<br><span class="highlight">353094人</span></li>
                         </ul>
                     </div>
@@ -1632,7 +1653,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                     <img class="aboutIllustration" src="./assets/sum_2.png" alt="提領icon" />
                     <div class="statisticsWrapper">
                         <ul>
-                            <li>2024 總提領金額<span class="highlight">187.9億</span></li>
+                            <li>2024 總提領金額<br><span class="highlight">187.9億</span></li>
                             <li>活躍用戶<br><span class="highlight">61425人</span></li>
                         </ul>
                     </div>
@@ -1645,7 +1666,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                     <img class="aboutIllustration" src="./assets/sum_3.png" alt="跨轉icon" />
                     <div class="statisticsWrapper">
                         <ul>
-                            <li>2024 總跨轉金額<span class="highlight">610.0億</span></li>
+                            <li>2024 總跨轉金額<br><span class="highlight">610.0億</span></li>
                             <li>活躍用戶<br><span class="highlight">181539人</span></li>
                         </ul>
                     </div>
@@ -1677,7 +1698,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
             </p>
         </div>
         <div class="imageContainer">
-            <img class="" src="./assets/safety.png" alt="街口交易超安全" />
+            <img class="screenshotImage bdrdis" src="./assets/safety.png" alt="街口交易超安全" />
         </div>
     </section>
 
@@ -1779,10 +1800,13 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
     <section class="discussionSection section gray case">
         <div class="titleContainer2">
             <h2 class="subHeading">街口幣與街口券成功案例</h2>
+        </div>
+        <div class="contentContainer">
             <p class="statisticsDescription">
                 透過街口幣與街口券加持，2024年街口支付的行銷活動也大幅提升成效。不論是在促購整體消費金額、筆數，或是新舊用戶首購上，都有相當亮眼的表現。
             </p>
         </div>
+
         <div class="cards">
             <div class="chartsWrapper card">
                 <div class="imageContainer card">
@@ -1872,23 +1896,29 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                     <div class="chart-wrapper2">
                         <!-- 第一頁卡片內容 -->
                         <img class="card-top" src="./assets/event_01.png" alt="" />
-                        <h4>超商月</h4>
-                        <p>街口支付的超商月是指街口支付用戶在特定月份內於便利商店消費所享有的回饋活動。根據最新資訊，街口支付與四大超商（7-ELEVEN、全家便利商店、萊爾富和OK超商）合作，推出了一系列的回饋方案。
-                        </p>
+                        <div class="contentContainer cardtop">
+                            <h4>超商月</h4>
+                            <p>街口支付的超商月是指街口支付用戶在特定月份內於便利商店消費所享有的回饋活動。根據最新資訊，街口支付與四大超商（7-ELEVEN、全家便利商店、萊爾富和OK超商）合作，推出了一系列的回饋方案。
+                            </p>
+                        </div>
                     </div>
                     <div class="chart-wrapper2">
                         <!-- 第二頁卡片內容 -->
                         <img class="card-top" src="./assets/event_02.png" alt="" />
-                        <h4>餐飲月</h4>
-                        <p>街口餐飲月是街口支付推出的一項年度促銷活動，旨在鼓勵消費者在特定期間內於各大餐飲品牌進行消費。此次活動集結了多家知名餐飲品牌，包括連鎖餐廳及特色小吃，透過精心設計的優惠方案來吸引顧客。
-                        </p>
+                        <div class="contentContainer cardtop">
+                            <h4>餐飲月</h4>
+                            <p>街口餐飲月是街口支付推出的一項年度促銷活動，旨在鼓勵消費者在特定期間內於各大餐飲品牌進行消費。此次活動集結了多家知名餐飲品牌，包括連鎖餐廳及特色小吃，透過精心設計的優惠方案來吸引顧客。
+                            </p>
+                        </div>
                     </div>
                     <div class="chart-wrapper2">
                         <!-- 第三頁卡片內容 -->
                         <img class="card-top" src="./assets/event_03.png" alt="" />
-                        <h4>飲料節</h4>
-                        <p>街口支付與上萬家人氣手搖飲料品牌合作，推出「街口飲料節」，提供多款期間限定優惠，包括5折飲料券及手搖馬拉松集點抽獎，且消費者可享最高75折折扣和240元街口幣回饋。此活動有效提升合作店家交易額，並促進民眾使用街口支付購買飲料的習慣。
-                        </p>
+                        <div class="contentContainer cardtop">
+                            <h4>飲料節</h4>
+                            <p>街口支付與上萬家人氣手搖飲料品牌合作，推出「街口飲料節」，提供多款期間限定優惠，包括5折飲料券及手搖馬拉松集點抽獎，且消費者可享最高75折折扣和240元街口幣回饋。此活動有效提升合作店家交易額，並促進民眾使用街口支付購買飲料的習慣。
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <div class="card-indicatorRow">
@@ -1992,7 +2022,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                 因應近年ESG、無紙化趨勢，台中銀行與街口支付攜手合作，使整場活動採用無現金交易，利用「街口券」來取代以往市集活動會發出的紙本園遊券，事前發放至所有員工的街口帳號，當天即可使用街口券折抵消費。</p>
         </div>
         <div class="imageContainer">
-            <img class="screenshotImage" src="./assets/70_year.png" alt="台中銀行70週年慈善嘉年華" />
+            <img class="screenshotImage bdrdis" src="./assets/70_year.png" alt="台中銀行70週年慈善嘉年華" />
         </div>
     </section>
     <!-- Section 6-2：行銷案例 -->
@@ -2032,7 +2062,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
             </p>
         </div>
         <div class="imageContainer">
-            <img class="screenshotImage" src="./assets/MKT_case02.png" alt="台中銀行70週年慈善嘉年華" />
+            <img class="screenshotImage bdrdis" src="./assets/MKT_case02.png" alt="台中銀行70週年慈善嘉年華" />
         </div>
     </section>
     <section class="discussionSection section">
@@ -2071,12 +2101,12 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                 App「出示付款碼（反掃）」完成付款，涵蓋台灣人最愛去的連鎖超商、超市、百貨公司、藥妝店、餐廳、遊樂園、滑雪場等多元類型。</p>
         </div>
         <div class="imageContainer">
-            <img class="screenshotImage" src="./assets/milestone_01.png" alt="PayPay 反掃服務上線" />
+            <img class="screenshotImage bdrdis" src="./assets/milestone_01.png" alt="PayPay 反掃服務上線" />
         </div>
     </section>
     <section class="discussionSection section">
         <div class="imageContainer">
-            <img class="screenshotImage" src="./assets/milestone_02.png" alt="海內外機場接送" />
+            <img class="screenshotImage bdrdis" src="./assets/milestone_02.png" alt="海內外機場接送" />
         </div>
         <div class="contentContainer">
             <h3>一站預訂海內外機場接送</h3>
@@ -2094,12 +2124,12 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
             </p>
         </div>
         <div class="imageContainer">
-            <img class="screenshotImage" src="./assets/milestone_03.png" alt="開通 TWQR 購物功能" />
+            <img class="screenshotImage bdrdis" src="./assets/milestone_03.png" alt="開通 TWQR 購物功能" />
         </div>
     </section>
     <section class="discussionSection section">
         <div class="imageContainer">
-            <img class="screenshotImage" src="./assets/milestone_04.jpg" alt="攜手淘寶升級跨境網購支付體驗" />
+            <img class="screenshotImage bdrdis" src="./assets/milestone_04.jpg" alt="攜手淘寶升級跨境網購支付體驗" />
         </div>
         <div class="contentContainer">
             <h3>攜手淘寶升級跨境網購支付體驗</h3>
@@ -2118,38 +2148,12 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
             </p>
         </div>
         <div class="imageContainer">
-            <img class="screenshotImage" src="./assets/milestone_05.png" alt="正式支援 Apple 服務付款" />
+            <img class="screenshotImage bdrdis" src="./assets/milestone_05.png" alt="正式支援 Apple 服務付款" />
         </div>
     </section>
 
 
-    <!-- Section 6-3：加入TWQR -->
-    <section class="discussionSection section gray">
-        <div class="titleContainer1">
-            <h2 class="subHeading">重要里程</h2>
-            <h2 class="mainHeading1">加入TWQR與其成效</h2>
-        </div>
-        <div class="contentContainer left">
-            <p class="statisticsDescription">
-                數據顯示，TWQR正式推出後，交易金額持續成長。其中，也確實帶來額外約10%的交易與用戶。
-                <br><br>
-                此外為鼓勵民眾持續使用 TWQR 服務，街口支付更推出「TWQR 春夏 10% 回饋祭」，民眾於活動期間至全台街口支付標示 TWQR 店家消費， 掃描 QR Code 付款可享最高 10% 回饋。
-                <br><br>
-                同時，為邀請更多店家加入 TWQR 行列，街口支付再推「TWQR 店家 0 手續費」活動，助全臺店家輕鬆啟用街口 TWQR，降低行動支付導入成本。
-            </p>
-        </div>
-        <div class="imageContainer">
-            <div class="chart-wrapper">
-                <div class="flourish-embed flourish-chart" data-src="visualisation/21653573">
-                    <script src="https://public.flourish.studio/resources/embed.js"></script>
-                    <noscript>
-                        <img src="https://public.flourish.studio/visualisation/21653573/thumbnail" width="100%"
-                            alt="chart visualization" />
-                    </noscript>
-                </div>
-            </div>
-        </div>
-    </section>
+    
     <!-- Section 6-4：得獎實績 -->
     <section class="discussionSection section">
         <div class="titleContainer1">
@@ -2167,7 +2171,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
             </p>
         </div>
         <div class="imageContainer">
-            <img class="screenshotImage" src="./assets/award.png" alt="2024 創新商務獎獲獎" />
+            <img class="screenshotImage bdrdis" src="./assets/award.png" alt="2024 創新商務獎獲獎" />
         </div>
     </section>
 
@@ -2192,12 +2196,10 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                     <p class="Description">因應近年ESG、無紙化趨勢，台中銀行與街口支付攜手合作，使整場活動採用無現金交易，利用「街口券」來取代以往市集活動會發出的紙本</p>
                 </div>
             </div>
-            <div class="imageContainer">
-                <div class="cta-wrapper">
-                    <a class="btn-red" href="https://www.jkopay.com/application/download-app" target="_blank">加入合作店家</a>
-                    <a class="btn-white" href="https://www.jkopay.com/application/store" target="_blank">成為街口用戶</a>
-                    <a class="btn-white" href="service@jkopay.com" target="_blank">異業合作諮詢</a>
-                </div>
+            <div class="cta-wrapper">
+                <a class="btn-red" href="https://www.jkopay.com/application/download-app" target="_blank">加入合作店家</a>
+                <a class="btn-white" href="https://www.jkopay.com/application/store" target="_blank">成為街口用戶</a>
+                <a class="btn-white" href="service@jkopay.com" target="_blank">異業合作諮詢</a>
             </div>
         </div>
     </section>
@@ -2231,15 +2233,17 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                         <h3>主要解方</h3>
                     </div>
                     <div class="collabDescription about">
-                        <p>LnData 提供各式數據相關服務與解決方案，主要包含數據中台、數據市集、數據顧問與市場分析、Ln{360}顧客數據增長引擎、Ln{CARBON}碳資訊管理系統等等。並且擅長依據客戶需求提供客製化解決方案，並提供顧問輔導協助導入、內部教育訓練。</p>
+                        <p>LnData
+                            提供各式數據相關服務與解決方案，主要包含數據中台、數據市集、數據顧問與市場分析、Ln{360}顧客數據增長引擎、Ln{CARBON}碳資訊管理系統等等。並且擅長依據客戶需求提供客製化解決方案，並提供顧問輔導協助導入、內部教育訓練。
+                        </p>
                     </div>
                 </div>
                 <img class="logoImage1" src="./assets/footer_logoImage.png" alt="LnData Logo" />
-                    <a href="https://www.lndata.com/?utm_source=lndata-hr&utm_campaign=cobranding_2024&utm_content=cta"
-                        class="getStartedBtn" onclick="_smq.push(['custom','CTA','Conversion','LnData']);"
-                        target="_blank" style="margin-top: 15px;">
-                        立即開始
-                    </a>
+                <a href="https://www.lndata.com/?utm_source=lndata-hr&utm_campaign=cobranding_2024&utm_content=cta"
+                    class="getStartedBtn" onclick="_smq.push(['custom','CTA','Conversion','LnData']);" target="_blank"
+                    style="margin-top: 15px;">
+                    立即開始
+                </a>
             </div>
         </div>
     </section>

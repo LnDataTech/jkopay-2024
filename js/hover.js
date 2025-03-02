@@ -119,21 +119,36 @@ function initializeBarProgress() {
   const bars = document.querySelectorAll('.bar');
   const statsContents = document.querySelectorAll('.statisticsContent2');
 
+  // 默認顯示第一個內容
+  showContent(0);
+
   bars.forEach(bar => {
     bar.addEventListener('mouseenter', function () {
       const index = bar.getAttribute('data-index') - 1;
-      statsContents.forEach((content, idx) => {
-        content.classList.toggle('hide', idx !== index);
-      });
-    });
-
-    // 滑鼠離開時隱藏所有內容
-    bar.addEventListener('mouseleave', function () {
-      statsContents.forEach(content => content.classList.add('hide'));
+      showContent(index);
     });
   });
+
+  // 滑鼠離開所有長條時的處理
+  const barChart = document.querySelector('.bar-chart');
+  barChart.addEventListener('mouseleave', function () {
+    // 可以選擇顯示默認內容或隱藏所有內容
+    // 這裡選擇保持當前顯示的內容，不做任何操作
+  });
+
+  // 顯示特定索引的內容
+  function showContent(index) {
+    statsContents.forEach((content, idx) => {
+      if (idx === index) {
+        content.classList.remove('hide');
+      } else {
+        content.classList.add('hide');
+      }
+    });
+  }
 }
 
+// 在 DOM 加載完成後執行初始化
 document.addEventListener('DOMContentLoaded', initializeBarProgress);
 
 
