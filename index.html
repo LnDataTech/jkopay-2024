@@ -410,28 +410,28 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                         <span class="badge red">整體用戶</span>
                         <div class="stat-row">
                             <p class="stats-label">年人均消費次數</p>
-                            <p class="stats-value">113</p>
+                            <p class="stats-value">18<span class="unit">次</span></p>
                         </div>
                         <div class="stat-row">
                             <p class="stats-label">年人均消費總額</p>
-                            <p class="stats-value">$43,754</p>
+                            <p class="stats-value">$13,400</p>
                         </div>
                     </div>
                     <div class="stats-category">
                         <span class="badge red">尊爵會員</span>
                         <div class="stat-row">
                             <p class="stats-label">年人均消費次數</p>
-                            <p class="stats-value">337</p>
+                            <p class="stats-value">386<span class="unit">次</span></p>
                         </div>
                         <div class="stat-row">
                             <p class="stats-label">年人均消費總額</p>
-                            <p class="stats-value">208,762</p>
+                            <p class="stats-value">$270,000</p>
                         </div>
                     </div>
                     <div class="stats-summary">
                         <i class="fas fa-shopping-bag"></i>
-                        <p>在這一年當中，所有街口用戶總共透過街口完成消費次數</p>
-                        <p class="highlight-value">128,553,653</p>
+                        <p>在這一年當中，所有街口用戶總共透過街口完成消費次數約</p>
+                        <p class="highlight-value">130,000,000</p>
                     </div>
                 </div>
 
@@ -440,9 +440,9 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                     <div class="stats-category">
                         <span class="badge red">街口風雲榜</span>
                         <p class="stats-label">年度最高單筆消費</p>
-                        <p class="stats-value">?????</p>
+                        <p class="stats-value">$300,000</p>
                         <p class="stats-label">年度最高單月消費次數</p>
-                        <p class="stats-value">12,566,647</p>
+                        <p class="stats-value">2,170<span class="unit">次</span></p>
                     </div>
                 </div>
             </div>
@@ -641,7 +641,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
             <div class="statisticsWrapperRight">
                 <div class="info-box">
                     <p>點擊或移動滑鼠到橫條圖上看更多！</p>
-                    <img src="./assets/family.png" alt="會員等級徽章" class="badge-image">
+                    <img src="./assets/family.png" alt="尊爵會員徽章" class="badge-image">
                     <div class="info-content-wrapper">
                         <div class="statisticsContent2 hide">
                             <p class="statisticsDescription">
@@ -686,9 +686,9 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
             <h2 class="mainHeading1">每月會員日，你消費了嗎？</h2>
         </div>
         <div class="contentContainer left">
-            <p class="statisticsDescription">2024
+            <p class="statisticsDescription">
                 每月5日是街口會員的小確幸日子！
-                <br><br>從2、3頁的圖表數據可見，2024
+                <br><br>從資訊卡2、3頁的圖表數據可見，2024
                 年街口支付會員日的交易額及交易次數均呈現顯著成長，顯示會員日成功刺激了用戶的消費意願。相較一般日子，會員日當天整體交易次數與金額上平均都有50-150%的曾長，尤其X月的增長特別顯著。且尊爵會員貢獻特別多。
             </p>
         </div>
@@ -1086,7 +1086,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                     </div>
                 </div>
 
-                <p style="margin-bottom:40%;">更多分析文字</p>
+                <p style="margin-bottom:40%;">你最常用街口消費的愛店在哪裡呢？最常用街口買什麼？歡迎截圖/複製連結分享並留言告訴我們喔！</p>
             </div>
         </div>
     </section>
@@ -1283,13 +1283,16 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                 </div>
 
                 <!-- 右邊區塊 -->
-                <div class="stats-right">
-                    <div class="stats-category">
+                <div class="stats-right" >
+                    <div class="stats-category" style="margin:0rem auto;">
                         <div class="contentContainer">
                             <p> 街口支付提供多元付款帳戶類型選擇，從各家銀行信用卡、帳戶綁定外，也有街口專屬交易帳戶；近年來更推出台新街口聯名卡、街利存帳戶等等，提供消費者更多選擇與更高回饋。
-                                <br><br>
-                                而這些有感回饋也反映在數據上，可發現台新街口聯名卡、街利存用戶在2024年都有明顯的上升趨勢。
                             </p>
+                            <p>
+                                而這些有感回饋也反映在數據上，可發現像是使用台新街口聯名卡、街利存帳戶的用戶在2024年都有明顯的上升趨勢。
+                            </p>
+                            <img class="screenshotImage shadow bdrdis" src="./assets/jinterest.jpg" alt="街利存" />
+                            <span class="img-caption">街口支付與台新銀行合作推出「街利存」服務，讓儲值變存款還能賺利息！</span>
                         </div>
                     </div>
                 </div>
@@ -1429,7 +1432,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 
         <!-- 右側區塊：翻頁卡片 -->
         <div class="contentContainer">
-            <div class="imageContainer card" style="max-height:75vh">
+            <div class="imageContainer card" style="max-height:80vh">
                 <!-- 此容器用於橫向滑動顯示3頁圖表 -->
                 <div class="chartsWrapper row3">
                     <div class="chart-wrapper2">

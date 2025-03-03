@@ -1881,12 +1881,11 @@ image13 {
 /* 卡片頂部圖片 */
 .card-top {
   width: 70% !important;
-  /* 將寬度從80%改為50% */
   height: auto;
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  margin: 30px auto 10px auto !important;
+  margin: 12px auto 4px auto !important;
   /* 修改margin，讓圖片置中且只保留底部間距 */
   display: block;
   /* 確保圖片置中 */
@@ -2207,6 +2206,13 @@ image13 {
   color: rgb(230, 10, 15);
 }
 
+/* 數據單位 */
+.unit {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(230, 10, 15);
+}
+
 /* 底部區塊 */
 .stats-summary {
   border: 2px solid #E60A0F;
@@ -2358,7 +2364,7 @@ image13 {
   position: relative;
   display: block;
   padding: 4px 20px;
-  max-height: 70vh !important;
+  max-height: 70vh;
 }
 
 @media screen and (max-width: 816px) {
@@ -3260,6 +3266,10 @@ image13 {
   padding-left: 0 !important;
 }
 
+.contentContainer.left .statisticsDescription {
+  padding-right:1rem;
+}
+
 .left2 {
   padding: 0 !important;
   background: url('../assets/twqr.jpg') no-repeat center ;
@@ -3295,6 +3305,7 @@ image13 {
 /* 文字方格的格式  */
 .contentContainer.cardtop {
   flex: 1;
+  gap: 4px;
 }
 
 @media (max-width: 861px) {
@@ -3310,6 +3321,9 @@ image13 {
   }
   .contentContainer.cardtop {
     width: 100%;
+  }
+  .contentContainer.left .statisticsDescription {
+    padding-right:0;
   }
 }
 
@@ -3389,6 +3403,10 @@ image13 {
   border-radius: 12px;
 }
 
+.img-caption {
+  color: #666;
+  font-size: 12px;
+}
 
 .TOP .screenshotImage {
   max-height: 400px;
