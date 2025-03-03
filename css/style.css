@@ -2815,9 +2815,20 @@ image13 {
 }
 
 .badge-image {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  transition: all 0.6s ease;
+  opacity: 1;
   width: 90px;
   height: auto;
   margin: 5% auto;
+}
+
+.badge-image.hide {
+  opacity: 0;
 }
 
 .info-content-wrapper {
@@ -2833,9 +2844,9 @@ image13 {
   top: 0;
   left: 0;
   width: 100%;
-  transition: opacity 0.3s ease;
   opacity: 0;
   color: #333;
+  transition: opacity 0.6s ease-in-out;
 }
 
 /* 響應式設計 - 小於816px的螢幕 */
@@ -2861,7 +2872,6 @@ image13 {
     top: 0;
     left: 0;
     width: 80%;
-    transition: opacity 0.3s ease;
     opacity: 0;
     color: #333;
   }
@@ -3483,11 +3493,18 @@ image13 {
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 15px;
   gap: 18px 0;
-  transition: all 0.6s ease-in-out;
   padding: 12px;
   min-width: 400px;
   max-width: 90%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.red .statisticsContent3 {
+  transition: all 0.6s ease-in-out;
+}
+
+.statisticsContent2 {
+  transition: opacity 0.6s ease-in-out;
 }
 
 .red .statisticsContent3.nobg {
@@ -4118,7 +4135,7 @@ image13 {
   margin-left: 0 auto;
 }
 
-.helperIllustration:hover {
+.card.helper:hover .helperIllustration {
   transform: translateY(-10%);
 }
 

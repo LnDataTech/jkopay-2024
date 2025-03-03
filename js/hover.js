@@ -118,6 +118,7 @@ function initializeBarProgress() {
   // 設定 hover 事件，顯示對應的統計內容
   const bars = document.querySelectorAll('.bar');
   const statsContents = document.querySelectorAll('.statisticsContent2');
+  const badgeImg = document.querySelectorAll('.badge-image');
 
   // 默認顯示第一個內容
   showContent(0);
@@ -139,6 +140,13 @@ function initializeBarProgress() {
   // 顯示特定索引的內容
   function showContent(index) {
     statsContents.forEach((content, idx) => {
+      if (idx === index) {
+        content.classList.remove('hide');
+      } else {
+        content.classList.add('hide');
+      }
+    });
+    badgeImg.forEach((content, idx) => {
       if (idx === index) {
         content.classList.remove('hide');
       } else {
