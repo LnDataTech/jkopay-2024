@@ -62,16 +62,32 @@ window.addEventListener("scroll", function () {
   });
 
 
-  document.querySelectorAll('.indicator3').forEach((indicator, index) => {
+  document.querySelectorAll('.indicator3').forEach((indicator, index) => { 
     indicator.addEventListener('click', () => {
-      // 移除所有指示器的 active 類別
-      document.querySelectorAll('.indicator3').forEach(i => i.classList.remove('active'));
-      // 為當前點擊的指示器新增 active 類別
-      indicator.classList.add('active');
-      // 計算移動距離：若 index = 0 則 translateX(0)，index = 1 則 translateX(-100%)，index = 2 則 translateX(-200%)
-      document.querySelector('.chartsWrapper.row3').style.transform = `translateX(-${index * 33.33}%)`;
-  });
-  });
+      const chartsWrapper3 = document.querySelector('.chartsWrapper.row3');
+        // 移除所有指示器的 active 類別
+        document.querySelectorAll('.indicator3').forEach(i => i.classList.remove('active'));
+        // 為當前點擊的指示器新增 active 類別
+        indicator.classList.add('active');
+
+        // 計算移動距離：index = 0 則 translateX(0)，index = 1 則 translateX(-33.33%)，index = 2 則 translateX(-66.66%)
+        chartsWrapper3.style.transform = `translateX(-${index * 33.33}%)`;
+
+        // 取得 card-bottom 元素
+        const cardBottom = document.querySelector('.card-bottom');
+
+        // 當 index 為 0，新增 "active" 類別，否則移除
+        if (index === 0) {
+            cardBottom.classList.add('active');
+            cardBottom.style.width = '36.3%';
+            cardBottom.style.height = '60%';
+        } else {
+            cardBottom.classList.remove('active');
+            cardBottom.style.width = '33%';
+            cardBottom.style.transform = 'translateX(-2.7%)';
+        }
+    });
+});
 
   document.addEventListener("DOMContentLoaded", function () {
     // 三塊式翻頁效果
@@ -125,6 +141,11 @@ function initializeBarProgress() {
 
   bars.forEach(bar => {
     bar.addEventListener('mouseenter', function () {
+      // 清除所有 bar 的 hover 狀態
+      bars.forEach(b => b.classList.remove('bar-hover'));
+      // 為當前 bar 加上 hover 狀態
+      bar.classList.add('bar-hover');
+
       const index = bar.getAttribute('data-index') - 1;
       showContent(index);
     });
@@ -169,7 +190,7 @@ document.addEventListener('DOMContentLoaded', initializeBarProgress);
   
     const observerOptions = {
       root: null,
-      threshold: 0.5  // 當至少50%進入視窗時觸發
+      threshold: 0.01  // 當至少50%進入視窗時觸發
     };
   
     const observer = new IntersectionObserver((entries, observer) => {
@@ -220,7 +241,7 @@ document.addEventListener('DOMContentLoaded', initializeBarProgress);
 
   const observerOptions = {
     root: null,
-    threshold: 0.5  // 當目標至少50%進入視窗時觸發
+    threshold: 0.3  // 當目標至少50%進入視窗時觸發
   };
 
   const observer = new IntersectionObserver((entries, observer) => {

@@ -696,11 +696,46 @@ body {
   color: gray;
 }
 
+.icon-container {
+  display: flex;
+  gap: 20px;
+}
+
 .icon {
   width: 15px;
   height: 15px;
   border-radius: 50%;
   display: inline-block;
+}
+
+.icon-container .icon {
+  width: 80px;
+  height: 80px;
+  background-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: scaleEffect 5s infinite ease-in-out;
+}
+
+.icon img {
+  width: 40px;
+  height: 40px;
+}
+
+/* 設置不同的動畫延遲，讓 icon 依序放大縮小 */
+.icon:nth-child(1) { animation-delay: 1s; }
+.icon:nth-child(2) { animation-delay: 2s; }
+.icon:nth-child(3) { animation-delay: 3s; }
+.icon:nth-child(4) { animation-delay: 4s; }
+.icon:nth-child(5) { animation-delay: 5s; }
+
+@keyframes scaleEffect {
+  0%,5%, 100% { transform: scale(1); }
+  15% { transform: scale(1.3); } /* 快速放大 */
+  25% { transform: scale(1.3); } /* 保持放大狀態 */
+  35% { transform: scale(1); } /* 快速縮小 */
 }
 
 /* 文字的紅色樣式 */
@@ -719,6 +754,15 @@ body {
   .user-stat {
     flex-direction: column;
     gap: 15px;
+  }
+
+  .discussionSection.gray {
+    margin-bottom: 2rem;
+  }
+
+  .discussionSection.card-section,
+  .discussionSection.case {
+    margin-bottom: 1rem;
   }
 }
 
@@ -820,6 +864,7 @@ image13 {
   .headlineWrapper1 {
     font-size: 16px;
   }
+
   .workLifeBalanceSection .textContent {
     margin-top: 20%;
   }
@@ -1207,7 +1252,7 @@ image13 {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 94.88%;
+  width: 95%;
 }
 
 .infoTextContainer {
@@ -1265,6 +1310,10 @@ image13 {
   padding: 6px 9px;
   background: rgba(255, 255, 255, 0.25);
   border-radius: 12px;
+}
+
+.card-indicatorRow2 {
+  left: 15% !important;
 }
 
 .card-indicatorRow2:hover,
@@ -1477,6 +1526,13 @@ image13 {
 @media (max-width: 991px) {
   .mainContent1 {
     width: 100%;
+    min-width: unset;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainContent1 {
+    width: auto;
     min-width: unset;
   }
 }
@@ -1726,6 +1782,12 @@ image13 {
   width: 100%;
 }
 
+@media (max-width: 480px) {
+  .success .cards {
+    width: 100%;
+  }
+}
+
 .cards .card {
   height: 100%;
   padding: 0 !important;
@@ -1756,8 +1818,8 @@ image13 {
 
 .card.padding {
   margin: 0.5rem auto;
-  width: 88%;
-  background: rgba(255, 255, 255, 0.75);
+  width: 96%;
+  background: rgba(255, 255, 255, 0.69);
   box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
@@ -1767,7 +1829,7 @@ image13 {
   background: rgba(255, 255, 255, 0.85);
   box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
 .card.padding2 {
@@ -1819,7 +1881,6 @@ image13 {
   font-weight: bold;
   padding: 6px 12px;
   border-radius: 20px;
-  margin: 0.5rem;
   display: inline-block;
   width: fit-content;
 
@@ -1878,32 +1939,48 @@ image13 {
   margin-bottom: 16px;
 }
 
-/* 卡片頂部圖片 */
 .card-top {
+  height: 40%;
+  padding-top: 1rem;
+}
+
+/* 卡片頂部圖片 */
+img.card-top {
   width: 70% !important;
-  height: auto;
+  height: auto !important;
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  margin: 12px auto 4px auto !important;
-  /* 修改margin，讓圖片置中且只保留底部間距 */
+  margin: 6px auto 3px auto !important;
   display: block;
-  /* 確保圖片置中 */
 }
 
-.card-top.phone {
+img.card-top.phone {
   border-radius: none;
   box-shadow: none;
 }
 
 /* 卡片底部圖片 */
 .card-bottom {
-  width: 100% !important;
-  max-height: 100%;
-  margin-top: 5% !important;
+  position: absolute;
+  height: 50%;
   object-fit: cover;
   border-radius: 0 0 12px 12px;
+  bottom: 0;
+  left: 0;
+  z-index:2;
 }
+
+.card-bottom.active {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 55%;
+  background-position: center !important;
+  background-size: cover !important;
+}
+
 
 
 /* 左側區塊基本樣式 */
@@ -1967,7 +2044,7 @@ image13 {
     margin: 5% auto;
   }
 
-  .card-top {
+  img.card-top {
     width: 60% !important;
   }
 }
@@ -1977,7 +2054,7 @@ image13 {
     min-height: 180px;
   }
 
-  .card-top {
+  img.card-top {
     width: 100% !important;
   }
 }
@@ -1999,6 +2076,11 @@ image13 {
 .card-right .chart-wrapper2 {
   width: 100% !important;
   margin-bottom: 1rem;
+}
+
+.card-right .description {
+  padding: 12px 0;
+  z-index: 2;
 }
 
 @media screen and (max-width: 480px) {
@@ -2073,7 +2155,7 @@ image13 {
 
   /* 指示器位置調整 */
   .card-indicatorRow2 {
-    bottom: -20%;
+    bottom: 0;
     left: 45%;
   }
 
@@ -2084,10 +2166,26 @@ image13 {
 
 }
 
+@media screen and (max-width: 480px) {
+  .success .card {
+    padding: 0px !important;
+  }
+
+  .success .card-indicatorRow2 {
+    bottom: 0;
+  }
+
+  .card-right .flourish-embed {
+    transform: scale(1.0);
+    transform-origin: center top;
+    margin: 0 auto;
+  }
+}
+
 /* 更小螢幕的額外調整 */
 @media screen and (max-width: 480px) {
-  .case .inner {
-    min-height: 1150px;
+  .success .inner {
+    height: auto;
   }
 
   .card-right {
@@ -2374,6 +2472,9 @@ image13 {
     overflow-y: visible;
 
   }
+  .success .imageContainer.card {
+    overflow-y: hidden;
+  }
 }
 
 /* chartsWrapper 用於橫向排列兩頁 */
@@ -2478,6 +2579,7 @@ image13 {
   justify-content: flex-start;
 }
 
+
 .page1.flourish-chart {
   max-width: 50% !important;
 }
@@ -2553,6 +2655,7 @@ image13 {
   overflow: visible !important;
   align-items: unset !important;
   min-height: 110vh;
+  position: relative;
   z-index: 999;
 }
 
@@ -2567,6 +2670,7 @@ image13 {
   z-index: 20;
 }
 
+.contentContainer.sticky,
 .imageContainer.sticky {
   align-items: flex-start;
   max-height: 100vh;
@@ -2731,6 +2835,10 @@ image13 {
 }
 
 @media (max-width: 480px) {
+  .top3-container {
+    width: 100%;
+  }
+
   .top-circle {
     width: 50px;
     height: 50px;
@@ -2778,6 +2886,10 @@ image13 {
   transition: background-color 0.3s ease;
 }
 
+.bar-hover {
+  background-color: #EA373C;
+}
+
 .bar:hover {
   background-color: #EA373C;
 }
@@ -2819,10 +2931,9 @@ image13 {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 100%;
   transition: all 0.6s ease;
   opacity: 1;
-  width: 90px;
+  width: 75px;
   height: auto;
   margin: 5% auto;
 }
@@ -2967,14 +3078,6 @@ image13 {
 
 .discussionSection.start {
   padding: 2rem 3rem 0 3rem;
-}
-
-.gray {
-  background-color: rgba(240, 240, 240, 1) !important;
-}
-
-.red {
-  background-color: rgba(230, 10, 15, 1) !important;
 }
 
 .titleContainer {
@@ -3277,12 +3380,12 @@ image13 {
 }
 
 .contentContainer.left .statisticsDescription {
-  padding-right:1rem;
+  padding-right: 1rem;
 }
 
 .left2 {
   padding: 0 !important;
-  background: url('../assets/twqr.jpg') no-repeat center ;
+  background: url('../assets/twqr.jpg') no-repeat center;
   background-size: cover;
   flex: 1 1 50%;
   min-width: 200px;
@@ -3295,8 +3398,7 @@ image13 {
 
 
 .left2 * {
-  padding-left:1.4rem;
-  padding-right: 0.6rem;
+  padding:0 1.5rem;
 }
 
 .left2 .subHeading {
@@ -3315,7 +3417,29 @@ image13 {
 /* 文字方格的格式  */
 .contentContainer.cardtop {
   flex: 1;
+  background-color: #ffffff;
   gap: 4px;
+  transition: all 0.6s ease-in-out;
+  transform: translateY(-12%);
+}
+
+.chart-wrapper2:hover .contentContainer.cardtop{
+  transform: translateY(-24%);
+}
+
+/* 利用 ::before 或 ::after 偽元素做羽化漸層 */
+.contentContainer.cardtop::before {
+  content: "";
+  position: absolute;
+  top: -5.9rem;     /* 將偽元素定位在上方 */
+  left: 0;
+  width: 100%;
+  height: 6rem; /* 控制羽化範圍 (越大越明顯) */
+  
+  /* 漸層: 從不透明 -> 透明 */
+  background: linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0));
+  
+  pointer-events: none; /* 讓偽元素不影響點擊事件 */
 }
 
 @media (max-width: 861px) {
@@ -3329,11 +3453,13 @@ image13 {
   .statisticsWrapper {
     margin: 0 auto;
   }
+
   .contentContainer.cardtop {
     width: 100%;
   }
+
   .contentContainer.left .statisticsDescription {
-    padding-right:0;
+    padding-right: 0;
   }
 }
 
@@ -3515,7 +3641,7 @@ image13 {
 }
 
 .red .statisticsContent3 {
-  margin: 2.5rem auto;
+  margin: 6rem auto;
 }
 
 .statisticsContent2 {
@@ -3606,9 +3732,12 @@ image13 {
 }
 
 .gray {
-  background-color: #f5f5f5;
+  background-color: rgba(240, 240, 240, 1) !important;
 }
 
+.red {
+  background-color: rgba(230, 10, 15, 1) !important;
+}
 
 
 .sticky {
@@ -3616,9 +3745,7 @@ image13 {
   top: 0;
 }
 
-.sticky-box {
-  position: relative;
-}
+
 
 .red {
   background-color: #ff0000;
@@ -3634,6 +3761,7 @@ image13 {
   width: 100%;
 }
 
+/* 控制繳費第三頁圖表，後續不須亦可刪除 */
 .chart-wrapper.pay {
   margin: 0;
   height: 50vh;
@@ -3642,6 +3770,13 @@ image13 {
   /* 防止內容溢出 */
   transform-origin: top center;
   /* 設置變形的原點在頂部中心 */
+}
+
+@media screen and (max-width: 480px) {
+  .chart-wrapper.pay {
+    margin: 0;
+    height: 30vh;
+  }
 }
 
 .pay .flourish-embed {
@@ -3690,14 +3825,25 @@ image13 {
   }
 
   .imageContainer.start img {
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0));
-    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0));
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0));
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0));
   }
 }
 
 @media screen and (max-width: 480px) {
+  .statisticsDescription.mobile {
+    display: flex;
+    flex-direction: column;
+  }
+
   .titleContainer1 {
     padding: 5px;
+    margin: 1.5rem auto;
+  }
+
+  .titleContainer1.top3 {
+    padding: 5px;
+    margin: 0 auto;
   }
 
 }
@@ -3740,13 +3886,26 @@ image13 {
 }
 
 .statisticsWrapper li,
-.statisticsWrapperLeft li {
+.statisticsWrapperLeft li,
+.statisticsWrapper p {
   color: #333;
   font-size: 18px;
   line-height: 1.6;
   margin-bottom: 16px;
-  padding-left: 16px;
+  padding:0 16px;
   position: relative;
+}
+
+.statisticsWrapper p {
+  font-size: 14px !important;
+  line-height: 2 !important;
+}
+
+.statisticsContent3 h3,
+.statisticsContent3 p {
+  margin-bottom: 0;
+  padding-bottom: 4px;
+  padding:0 16px;
 }
 
 .statisticsWrapper li:last-child {
@@ -4406,7 +4565,7 @@ image13 {
   box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.15);
   background-color: rgb(222, 60, 60);
   border-radius: 36px !important;
-  font: 700 28px/2 "Noto Sans JP", Helvetica, Arial, serif !important;
+  font: 700 28px/1.5 "Noto Sans JP", Helvetica, Arial, serif !important;
 }
 
 .btn-red:hover {
