@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', initializeBarProgress);
   
     const observerOptions = {
       root: null,
-      threshold: 0.01  // 當至少50%進入視窗時觸發
+      threshold: 1.0  // 當至少50%進入視窗時觸發
     };
   
     const observer = new IntersectionObserver((entries, observer) => {
