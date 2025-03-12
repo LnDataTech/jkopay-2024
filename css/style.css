@@ -709,8 +709,10 @@ body {
 }
 
 .icon-container .icon {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
+  /* 使用 aspect-ratio 確保元素保持方形 */
+  aspect-ratio: 1 / 1;
   background-color: rgba(255, 255, 255, 0.85);
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -720,22 +722,88 @@ body {
 }
 
 .icon img {
-  width: 40px;
-  height: 40px;
+  width: 50%;
+  /* 使用百分比而非固定尺寸 */
+  height: auto;
+  /* 讓高度自動調整以保持原比例 */
+  max-width: 40px;
+  /* 限制最大寬度 */
+  max-height: 40px;
+  /* 限制最大高度 */
 }
 
 /* 設置不同的動畫延遲，讓 icon 依序放大縮小 */
-.icon:nth-child(1) { animation-delay: 1s; }
-.icon:nth-child(2) { animation-delay: 2s; }
-.icon:nth-child(3) { animation-delay: 3s; }
-.icon:nth-child(4) { animation-delay: 4s; }
-.icon:nth-child(5) { animation-delay: 5s; }
+.icon:nth-child(1) {
+  animation-delay: 1s;
+}
+
+.icon:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.icon:nth-child(3) {
+  animation-delay: 3s;
+}
+
+.icon:nth-child(4) {
+  animation-delay: 4s;
+}
+
+.icon:nth-child(5) {
+  animation-delay: 5s;
+}
 
 @keyframes scaleEffect {
-  0%,5%, 100% { transform: scale(1); }
-  15% { transform: scale(1.3); } /* 快速放大 */
-  25% { transform: scale(1.3); } /* 保持放大狀態 */
-  35% { transform: scale(1); } /* 快速縮小 */
+
+  0%,
+  5%,
+  100% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1.3);
+  }
+
+  /* 快速放大 */
+  25% {
+    transform: scale(1.3);
+  }
+
+  /* 保持放大狀態 */
+  35% {
+    transform: scale(1);
+  }
+
+  /* 快速縮小 */
+}
+
+/* 媒體查詢：調整小螢幕下的大小 */
+@media screen and (max-width: 768px) {
+  .icon-container {
+    gap: 15px;
+    /* 減少間距 */
+  }
+
+  .icon-container .icon {
+    width: 60px;
+    /* 更小的圓形 */
+    height: 60px;
+  }
+}
+
+/* 更小的螢幕 */
+@media screen and (max-width: 480px) {
+  .icon-container {
+    gap: 10px;
+    /* 進一步減少間距 */
+  }
+
+  .icon-container .icon {
+    width: 50px;
+    /* 更小的圓形 */
+    height: 50px;
+  }
 }
 
 /* 文字的紅色樣式 */
@@ -1968,7 +2036,7 @@ img.card-top.phone {
   border-radius: 0 0 12px 12px;
   bottom: 0;
   left: 0;
-  z-index:2;
+  z-index: 2;
 }
 
 .card-bottom.active {
@@ -2301,14 +2369,14 @@ img.card-top.phone {
 .stats-value {
   font-size: 28px;
   font-weight: bold;
-  color: rgb(230, 10, 15);
+  color: #000;
 }
 
 /* 數據單位 */
 .unit {
   font-size: 20px;
   font-weight: bold;
-  color: rgb(230, 10, 15);
+  color: #000;
 }
 
 /* 底部區塊 */
@@ -2472,6 +2540,7 @@ img.card-top.phone {
     overflow-y: visible;
 
   }
+
   .success .imageContainer.card {
     overflow-y: hidden;
   }
@@ -3398,7 +3467,7 @@ img.card-top.phone {
 
 
 .left2 * {
-  padding:0 1.5rem;
+  padding: 0 1.5rem;
 }
 
 .left2 .subHeading {
@@ -3423,7 +3492,7 @@ img.card-top.phone {
   transform: translateY(-12%);
 }
 
-.chart-wrapper2:hover .contentContainer.cardtop{
+.chart-wrapper2:hover .contentContainer.cardtop {
   transform: translateY(-24%);
 }
 
@@ -3431,15 +3500,18 @@ img.card-top.phone {
 .contentContainer.cardtop::before {
   content: "";
   position: absolute;
-  top: -5.9rem;     /* 將偽元素定位在上方 */
+  top: -5.9rem;
+  /* 將偽元素定位在上方 */
   left: 0;
   width: 100%;
-  height: 6rem; /* 控制羽化範圍 (越大越明顯) */
-  
+  height: 6rem;
+  /* 控制羽化範圍 (越大越明顯) */
+
   /* 漸層: 從不透明 -> 透明 */
-  background: linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0));
-  
-  pointer-events: none; /* 讓偽元素不影響點擊事件 */
+  background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+
+  pointer-events: none;
+  /* 讓偽元素不影響點擊事件 */
 }
 
 @media (max-width: 861px) {
@@ -3516,7 +3588,6 @@ img.card-top.phone {
 
 .screenshotImage {
   width: 90%;
-  max-height: 300px;
   height: auto;
   object-fit: cover;
   transition: all 0.6s ease-in;
@@ -3892,7 +3963,7 @@ img.card-top.phone {
   font-size: 18px;
   line-height: 1.6;
   margin-bottom: 16px;
-  padding:0 16px;
+  padding: 0 16px;
   position: relative;
 }
 
@@ -3905,7 +3976,7 @@ img.card-top.phone {
 .statisticsContent3 p {
   margin-bottom: 0;
   padding-bottom: 4px;
-  padding:0 16px;
+  padding: 0 16px;
 }
 
 .statisticsWrapper li:last-child {
@@ -4364,95 +4435,143 @@ img.card-top.phone {
   letter-spacing: 1.6px;
 }
 
-.Section_sum .statisticsWrapper {
-  display: flex;
-  flex-direction: row;
-  background-color: white;
-  outline: 2px solid #093657;
-  outline-offset: -2px;
-  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.06);
-  width: 55%;
-  min-width: 480px;
-  padding: 1.5% 2.5%;
-  /* 左右各2.5%的間隔 */
-}
-
-@media (max-width: 768px) {
-
-  /* 小結區塊 */
-  .Section_sum .contentWrapper10 {
-    margin: 10px auto 0;
-    /* 減少上下 margin 的空白 */
-    padding: 10px;
-    /* 添加內部間距讓內容更加緊湊 */
-  }
-}
-
 
 /* 手機版，小結格式  */
 /* 預設佈局：Flourish 圖表 60% 左側，文字方格和圖片 40% 右側 */
 @media (max-width: 768px) {
-  .Section_sum .contentContainer {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .Section_sum .contentContainer {
-    margin: 2em 0 0;
-    width: 100%;
-    /* 當小於平板時，寬度變成100%並垂直排列 */
-
-  }
-
-  .Section_sum .statisticsWrapper {
-    margin: 2em 0 0;
-    width: 100%;
-    min-width: unset;
-  }
-
   .suggestionsContainer {
     margin: 0 0 2em;
   }
 
 }
 
-@media (max-width: 430px) {
-  .Section_sum .contentContainer {
-    align-self: center;
-    max-width: 100%;
-  }
-
-  .Section_sum .statisticsWrapper {
-    width: 100%;
-    /* 在小螢幕下的文字方格寬度設為 100% */
-    padding: 5px;
-    /* 增加內間距以避免內容裁切 */
-    box-sizing: border-box;
-    /* 確保 padding 不會導致內容超出邊界 */
-  }
-
-  .resourcesTextWrapper {
-    width: auto;
-    margin: 6px 12px;
-    gap: 4px 0;
-  }
-
-  .resourceContainer {
-    font: 700 12px/1.8 "Noto Sans JP", Helvetica, Arial, serif;
-    letter-spacing: 1.3px;
-    margin: 0;
-  }
-
-  .resourcesIllustration {
-    min-width: 90px;
-  }
-
-  .resourceContainer_span1 {
-    margin-bottom: 9px;
-  }
+/* 用錢好幫手區塊樣式 */
+.money-helper-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2%;
+  padding: 2% 5%;
+  width: 100%;
 }
 
-/* 手機版，小結格式 end */
+/* 卡片基本樣式 */
+.money-helper-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.25);
+  padding: 20px;
+}
+
+.money-helper-card .statisticsWrapper {
+  width: auto;
+}
+
+/* 寬卡片樣式（左側） */
+.money-helper-card.wide {
+  width: 58%;
+}
+
+/* 窄卡片樣式（右側） */
+.money-helper-card.narrow {
+  width: 38%;
+}
+
+/* 徽章容器 */
+.badge-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+/* 徽章樣式 */
+.badge {
+  background-color: #d63031;
+  color: white;
+  padding: 8px 30px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+/* 圖示容器 */
+.icon-container {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+/* 圖示樣式 */
+.helper-icon {
+  height: 80px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.helper-icon:hover {
+  transform: translateY(-5px);
+}
+
+/* 統計數據區塊 */
+.statistics-block {
+  margin: 15px auto;
+  border-left: 3px solid #d63031;
+  padding-left: 15px;
+}
+
+.statistics-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-item h4 {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.amount,
+.rate {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* 說明文字容器 */
+.description-container {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+}
+
+.description-text {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .money-helper-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .money-helper-card.wide,
+  .money-helper-card.narrow {
+    width: 100%;
+  }
+
+  .statistics-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .description-container {
+    flex-direction: column;
+  }
+}
 
 /* 左側紅色區塊 */
 .redBar {
