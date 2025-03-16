@@ -111,7 +111,6 @@ body {
   font-size: 24px;
   font-weight: bold;
   color: #FFFFFF;
-  /* 直接使用色號 */
   margin-bottom: 10px;
 }
 
@@ -119,7 +118,6 @@ body {
   font-size: 14px;
   line-height: 1.6;
   color: #FFFFFF;
-  /* 直接使用色號 */
 }
 
 /* 🔹 Hover 時根據滑鼠方向反向移動 🔹 */
@@ -205,7 +203,6 @@ body {
   }
 
 }
-
 
 
 /* navbar */
@@ -306,7 +303,6 @@ body {
 }
 
 @media (max-width: 991px) {
-
   /* 手機模式顯示 menu-toggle 並隱藏電腦版 navbar */
   .menu-toggle {
     display: block;
@@ -332,7 +328,6 @@ body {
 /* 電腦版_navbar */
 .logoLink {
   text-decoration: none;
-  /* 移除預設連結樣式 */
 }
 
 .logoContainer {
@@ -388,9 +383,7 @@ body {
   width: 100%;
   text-align: center;
   display: flex;
-  /* 加入 display: flex */
   align-items: center;
-  /* 加入 align-items: center */
   justify-content: center;
 }
 
@@ -401,9 +394,7 @@ body {
   width: 30%;
   text-align: center;
   display: flex;
-  /* 加入 display: flex */
   align-items: center;
-  /* 加入 align-items: center */
   justify-content: center;
 }
 
