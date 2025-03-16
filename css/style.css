@@ -48,9 +48,10 @@ body {
 
 .heroSection {
   position: relative;
+  overflow: hidden;
   width: 100%;
   padding-top: 74px;
-  height: 480px;
+  height: 96vh;
   /* 可依據需求調整 */
   max-height: 100vh;
   display: flex;
@@ -63,7 +64,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url('../assets/banner.png') no-repeat center;
+  background: url('../assets/banner.jpg') no-repeat center;
   background-size: cover;
   z-index: 1;
   background-attachment: fixed;
@@ -127,11 +128,6 @@ body {
 }
 
 /* 🔹 追蹤滑鼠移動，讓 hover 產生反方向位移 🔹 */
-.heroSection {
-  position: relative;
-  overflow: hidden;
-}
-
 .heroSection .redCircle {
   will-change: transform;
 }
@@ -506,9 +502,30 @@ body {
 
 
 .overview {
-  background: url('../assets/bg-image-1.jpg') no-repeat left;
-  background-size: contain;
-  background-attachment: fixed;
+  background-size: auto !important;
+  background-attachment: fixed !important;
+  background-origin: content-box !important;
+  background-position: left !important;
+  background-size: 800px 400px !important;
+  background-repeat: no-repeat !important;
+}
+
+@media (max-width:1200px) {
+  .overview {
+    background-size: 720px 360px !important;
+  }
+}
+@media (max-width:1080px) {
+  .overview {
+    background-size: 600px 300px !important;
+  }
+}
+@media (max-width:816px) {
+  .overview {
+    background-size: cover !important;
+    background-position: center !important;
+    background-origin:unset !important;
+  }
 }
 
 .overview .imageLeft {
@@ -699,6 +716,8 @@ body {
 .icon-container {
   display: flex;
   gap: 20px;
+  justify-content: center;
+  margin: 15px 0;
 }
 
 .icon {
@@ -722,14 +741,11 @@ body {
 }
 
 .icon img {
-  width: 50%;
-  /* 使用百分比而非固定尺寸 */
+  width: 100%;
   height: auto;
-  /* 讓高度自動調整以保持原比例 */
-  max-width: 40px;
-  /* 限制最大寬度 */
-  max-height: 40px;
-  /* 限制最大高度 */
+  max-width: 60px;
+  max-height: 60px;
+  transform: translateY(-8px);
 }
 
 /* 設置不同的動畫延遲，讓 icon 依序放大縮小 */
@@ -786,9 +802,9 @@ body {
   }
 
   .icon-container .icon {
-    width: 60px;
+    width: 48px;
     /* 更小的圓形 */
-    height: 60px;
+    height: 48px;
   }
 }
 
@@ -800,9 +816,9 @@ body {
   }
 
   .icon-container .icon {
-    width: 50px;
+    width: 36px;
     /* 更小的圓形 */
-    height: 50px;
+    height: 36px;
   }
 }
 
@@ -3607,7 +3623,7 @@ img.card-top.phone {
 }
 
 .screenshotImage.bdrdis:hover {
-  border-radius: 12px;
+  border-radius: 8px;
 }
 
 .img-caption {
@@ -3626,6 +3642,14 @@ img.card-top.phone {
   width: 95%;
   margin: 10px auto;
   /* 占40%區域的80% */
+}
+
+.jkorz {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-direction: row;
 }
 
 .statisticsWrapper1 {
@@ -4470,12 +4494,12 @@ img.card-top.phone {
 
 /* 寬卡片樣式（左側） */
 .money-helper-card.wide {
-  width: 58%;
+  width: 54%;
 }
 
 /* 窄卡片樣式（右側） */
 .money-helper-card.narrow {
-  width: 38%;
+  width: 42%;
 }
 
 /* 徽章容器 */
@@ -4496,21 +4520,14 @@ img.card-top.phone {
   display: inline-block;
 }
 
-/* 圖示容器 */
-.icon-container {
-  display: flex;
-  justify-content: center;
-  margin: 15px 0;
-}
-
 /* 圖示樣式 */
 .helper-icon {
   height: 80px;
   object-fit: contain;
-  transition: all 0.3s ease;
+  transition: all 0.6s ease;
 }
 
-.helper-icon:hover {
+.money-helper-card:hover .helper-icon {
   transform: translateY(-5px);
 }
 
@@ -4590,7 +4607,8 @@ img.card-top.phone {
   flex: 1;
   position: relative;
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: fixed !important;
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -4601,7 +4619,24 @@ img.card-top.phone {
 }
 
 .contentWrapper3 {
-  background: url('../assets/bg_banner.jpg') no-repeat center;
+  background: url('../assets/bg-image-6.jpg') no-repeat center;
+}
+
+.contentWrapper3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.32);
+  mix-blend-mode: darken;
+  pointer-events: none;
+  transition: all 0.6s ease;
+}
+
+.contentWrapper3:hover::before{
+  background: rgba(0, 0, 0, 0.45); /* 這裡的透明黑色層降低亮度 */
 }
 
 .contentWrapper4 {
@@ -4643,7 +4678,7 @@ img.card-top.phone {
 }
 
 .contentWrapper3 .textContainer {
-  margin: 6rem 2rem;
+  margin: 8rem 2rem;
   text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
 }
 
@@ -4758,29 +4793,6 @@ img.card-top.phone {
   .contentWrapper1 {
     margin: 20px auto 50px;
   }
-}
-
-.navContainer {
-  z-index: 3;
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  width: 198px;
-  max-width: 85%;
-}
-
-.aboutUsBtn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 198px;
-  height: 57px;
-  font: 700 38px/1.5 "Noto Sans JP", Helvetica, Arial, serif;
-  color: #053657;
-  text-align: center;
-  padding: 0 18px;
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 75%, #f0eb47 75%);
-  letter-spacing: 1.89px;
 }
 
 .teamInfoContainer {
@@ -4898,119 +4910,13 @@ img.card-top.phone {
 }
 
 
-.partnerInfoContainer {
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 23px 2px 0 1px;
-}
-
-.partnerDivider {
-  z-index: 3;
-  width: 100%;
-  height: 2px;
-  background-color: #053657;
-}
-
-.partnerTitle {
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 18px 0 0;
-  font: 700 32px/1.5 "Noto Sans JP", Helvetica, Arial, serif;
-  color: #053657;
-  text-align: center;
-  letter-spacing: 1.6px;
-}
-
-@media (max-width: 991px) {
-  .partnerTitle {
-    font-size: 30px;
-  }
-}
-
-@media (max-width: 479px) {
-  .partnerTitle {
-    font-size: 26px;
-  }
-}
-
-.partnerNameWrapper {
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  margin: 12px 0 0;
-  width: 199.95px;
-  max-width: 85%;
-  transition: all 0.6s ease-in-out;
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 75%, #f0eb47 75%);
-}
-
-.partnerNameWrapper.hover-effect,
 .companyNameWrapper.hover-effect {
   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 85%, #f0eb47 85%);
 }
 
-.partnerName {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 15px 6px 0 8px;
-  font: 700 24px/2 "Noto Sans JP", Helvetica, Arial, serif;
-  color: #053657;
-  text-align: center;
-  letter-spacing: 1.6px;
-}
-
-@media (max-width: 991px) {
-  .partnerName {
-    font-size: 22px;
-  }
-}
-
-@media (max-width: 479px) {
-  .partnerName {
-    font-size: 20px;
-  }
-}
-
-.partnerDescription_box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 7px 0 0;
-  width: 732px;
-  max-width: 85%;
-  transition: all 0.6s ease-in-out;
-}
-
-.partnerDescription {
-  font: 700 16px/3 "Noto Sans JP", Helvetica, Arial, serif;
-  color: #053657;
-  text-align: center;
-  letter-spacing: 1.6px;
-  padding-top: 1rem;
-  padding-bottom: 1.5rem;
-  transition: all 0.6s ease-in-out;
-}
-
-@media (max-width: 479px) {
-  .partnerDescription {
-    font: 700 14px/2.4 "Noto Sans JP", Helvetica, Arial, serif;
-    text-align: justify;
-  }
-}
-
-.partnerDescription_box.hover-effect,
 .companyDescription_box.hover-effect {
   max-width: 88%;
   width: 778px;
-}
-
-.partnerDescription_box.hover-effect .partnerDescription {
-  letter-spacing: 2.4px;
 }
 
 .companyDescription_box.hover-effect .companyDescription {
@@ -5031,64 +4937,6 @@ img.card-top.phone {
   border-radius: 33.5px;
   padding: 9.5px 36px;
   letter-spacing: 1.6px;
-}
-
-.acknowledgementsContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 48px 0;
-  margin: 23px 2px 15% 2px;
-}
-
-.acknowledgementsDivider {
-  z-index: 1;
-  width: 100%;
-  height: 2px;
-  background-color: #053657;
-  transition: all 0.6s ease-in-out;
-}
-
-.acknowledgementsDivider.hover-effect {
-  width: 50%;
-  left: 0;
-  align-self: flex-start;
-}
-
-.acknowledgementsTitle_box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 581.92px;
-  max-width: 85%;
-}
-
-.acknowledgementsTitle {
-  font: 700 32px/1.5 "Noto Sans JP", Helvetica, Arial, serif;
-  color: #053657;
-  text-align: center;
-  letter-spacing: 1.6px;
-}
-
-@media (max-width: 991px) {
-  .acknowledgementsTitle {
-    font-size: 30px;
-  }
-}
-
-@media (max-width: 479px) {
-  .acknowledgementsTitle {
-    font-size: 26px;
-  }
-}
-
-.acknowledgementsTitle_span0 {
-  font: 700 1em/1.5 "Noto Sans JP", Helvetica, Arial, serif;
-}
-
-.acknowledgementsTitle_span1 {
-  font: 700 0.6em/2 "Noto Sans JP", Helvetica, Arial, serif;
-  margin-top: 1.5em;
 }
 
 /*關於我們 end*/
@@ -5150,35 +4998,6 @@ img.card-top.phone {
   }
 }
 
-.addressContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0 10px;
-  width: 565px;
-  min-width: 0;
-}
-
-@media (max-width: 768px) {
-  .addressContainer {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-@media (max-width: 575px) {
-  .addressContainer {
-    margin-left: auto;
-  }
-}
-
-@media (max-width: 768px) {
-  .addressContainer {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
 .logoImage1 {
   z-index: 1;
   width: 216px;
@@ -5192,33 +5011,6 @@ img.card-top.phone {
     min-width: unset;
     max-width: 216px;
     margin: 0;
-  }
-}
-
-.contactDetails {
-  width: 420px;
-  font: 400 14px/2 Inter, Helvetica, Arial, serif;
-  color: white;
-}
-
-@media (max-width: 575px) {
-  .contactDetails {
-    width: 100%;
-    margin-left: 10%;
-  }
-}
-
-.decorativeImage1 {
-  width: 340px;
-  min-width: 0;
-  object-fit: cover;
-}
-
-@media (max-width: 991px) {
-  .decorativeImage1 {
-    width: 100%;
-    min-width: unset;
-    max-width: 340px;
   }
 }
 
@@ -5245,19 +5037,9 @@ img.card-top.phone {
   text-align: center;
   width: 100%;
   margin-bottom: 30px;
-
 }
 
 
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  max-width: 50%;
-  margin: 0 auto;
-  padding-left: 12px;
-  border-left: dashed 1px #f0eb47;
-}
 
 .footer-social {
   font-size: 11px;
@@ -5282,11 +5064,6 @@ img.card-top.phone {
   height: 36px;
 }
 
-.footer-section {
-  flex: 1;
-  min-width: 120px;
-  margin-bottom: 20px;
-}
 
 .footer-title {
   font-size: 14px;
@@ -5317,19 +5094,6 @@ img.card-top.phone {
 
 .footer-link:hover {
   color: #f0eb47;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    margin-left: 10%;
-  }
-
-  .footer-section {
-    text-align: center;
-  }
 }
 
 /*footer end*/
