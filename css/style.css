@@ -26,11 +26,9 @@
 
 body {
   width: 100vw;
-  /* 限制寬度為視窗寬度 */
   max-width: 100vw;
   font-family: 'GenJyuuGothic', sans-serif;
   overflow-x: hidden;
-  /* 裁切掉橫向超出部分，防止橫軸拖拉 */
 }
 
 .main {
@@ -39,11 +37,9 @@ body {
   background-color: white;
   transition: all 0.8s ease-in-out !important;
   width: 100%;
-  /* 限制寬度為視窗寬度 */
   max-width: 100vw;
   overflow-x: hidden;
-  /* 裁切掉橫向超出部分，防止橫軸拖拉 */
-  font-family: 'GenJyuuGothic', 'GenJyuuGothicBold', Arial, sans-serif
+  font-family: 'GenJyuuGothic', 'GenJyuuGothicBold', Arial, sans-serif;
 }
 
 .heroSection {
@@ -52,7 +48,6 @@ body {
   width: 100%;
   padding-top: 74px;
   height: 96vh;
-  /* 可依據需求調整 */
   max-height: 100vh;
   display: flex;
   align-items: center;
@@ -83,9 +78,15 @@ body {
   text-align: center;
   padding: 20px;
   margin: 10%;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow:1px 1px 9px rgba(0, 0, 0, 0.3), 2px 2px 18px rgba(0, 0, 0, 0.4);
   z-index: 2;
   transition: transform 0.3s ease-out;
+}
+
+@media (max-width: 816px) {
+  .main * {
+    max-width: 100vw !important;
+  }
 }
 
 @media (max-width: 816px) {
@@ -292,6 +293,7 @@ body {
 .l-header-minimal {
   background-color: rgb(230, 10, 15) !important;
   color: #ffffff !important;
+  padding: 1rem 1.5rem;
 }
 
 .l-header-minimal__nav {
@@ -302,7 +304,7 @@ body {
   color: #ffffff !important;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 800px) {
   /* 手機模式顯示 menu-toggle 並隱藏電腦版 navbar */
   .menu-toggle {
     display: block;
@@ -785,16 +787,34 @@ body {
   /* 快速縮小 */
 }
 
-/* 媒體查詢：調整小螢幕下的大小 */
+@media screen and (min-width: 1281px) {
+  .icon-container {
+    gap: 24px;
+  }
+
+  .icon-container .icon {
+    width: 80px;
+    height: 80px;
+  }
+}
+@media screen and (max-width: 1280px) and (-webkit-min-device-pixel-ratio: 2) {
+  .icon-container {
+    gap: 24px;
+  }
+
+  .icon-container .icon {
+    width: 80px;
+    height: 80px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .icon-container {
     gap: 15px;
-    /* 減少間距 */
   }
 
   .icon-container .icon {
     width: 48px;
-    /* 更小的圓形 */
     height: 48px;
   }
 }
@@ -803,12 +823,10 @@ body {
 @media screen and (max-width: 480px) {
   .icon-container {
     gap: 10px;
-    /* 進一步減少間距 */
   }
 
   .icon-container .icon {
     width: 36px;
-    /* 更小的圓形 */
     height: 36px;
   }
 }
@@ -1825,9 +1843,6 @@ image13 {
   }
 }
 
-#amber {
-  transform: scale(64%) translateX(17%);
-}
 
 .storyBackgroundTitle {
   cursor: pointer;
@@ -1908,7 +1923,7 @@ image13 {
 }
 
 .card.padding2 {
-  margin: 1rem auto;
+  margin: 2rem auto;
   width: 100%;
 }
 
@@ -2021,7 +2036,7 @@ image13 {
 
 /* 卡片頂部圖片 */
 img.card-top {
-  width: 70% !important;
+  width: 65% !important;
   height: auto !important;
   object-fit: cover;
   border-radius: 8px;
@@ -2033,6 +2048,32 @@ img.card-top {
 img.card-top.phone {
   border-radius: none;
   box-shadow: none;
+  width: 69% !important;
+}
+
+@media screen and (min-width: 1281px) {
+  img.card-top.phone {
+    width: 80% !important;
+  }
+  img.card-top {
+    width: 80% !important;
+  }
+}
+@media screen and (max-width: 1280px) and (-webkit-min-device-pixel-ratio: 2) {
+  img.card-top {
+    width: 80% !important;
+  }
+  img.card-top.phone {
+    width: 92% !important;
+  }
+}
+@media screen and (max-width: 1201px) {
+  img.card-top.phone {
+    width: 75% !important;
+  }
+  img.card-top {
+    width: 75% !important;
+  }
 }
 
 /* 卡片底部圖片 */
@@ -2101,6 +2142,12 @@ img.card-top.phone {
 }
 
 /* 媒體查詢部分 */
+@media screen and (min-width:1281px) {
+  .card-left .image-container {
+    min-height: 496px;
+  }
+}
+
 @media screen and (max-width: 816px) {
   .card-left {
     width: 100%;
@@ -2139,7 +2186,7 @@ img.card-top.phone {
   width: 62%;
   height: 100%;
   padding: 2rem;
-  margin: o auto;
+  margin: 0 auto;
 }
 
 .card-right .chart-wrapper {
@@ -2158,11 +2205,20 @@ img.card-top.phone {
   z-index: 2;
 }
 
+@media screen and (min-width: 1281px) {
+  .card-right .chart-wrapper2 {
+    padding: 2rem 0;
+  }
+  .card-right .description {
+    font-size: 18px;
+    line-height: 36px;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .card-right .chart-wrapper2 {
     margin: 0;
   }
-
 }
 
 
@@ -3128,6 +3184,8 @@ img.card-top.phone {
   top: 20%;
   width: 60%;
   z-index: 1;
+  border-radius: 15px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.15);
 }
 
 .account-1:hover {
@@ -3503,22 +3561,29 @@ img.card-top.phone {
   transform: translateY(-24%);
 }
 
+@media (min-width: 1281px) {
+  .contentContainer.cardtop {
+    transform: translateY(-2%);
+  }
+  .chart-wrapper2:hover .contentContainer.cardtop {
+    transform: translateY(-10%);
+  }
+  .contentContainer.cardtop::before {
+    height: 7rem;
+  }
+}
+
 /* 利用 ::before 或 ::after 偽元素做羽化漸層 */
 .contentContainer.cardtop::before {
   content: "";
   position: absolute;
   top: -5.9rem;
-  /* 將偽元素定位在上方 */
   left: 0;
   width: 100%;
   height: 6rem;
   /* 控制羽化範圍 (越大越明顯) */
-
-  /* 漸層: 從不透明 -> 透明 */
   background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-
   pointer-events: none;
-  /* 讓偽元素不影響點擊事件 */
 }
 
 @media (max-width: 861px) {
@@ -4519,7 +4584,7 @@ img.card-top.phone {
 }
 
 .money-helper-card:hover .helper-icon {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
 }
 
 /* 統計數據區塊 */
@@ -4731,6 +4796,12 @@ img.card-top.phone {
 
 .btn-white:hover {
   transform: scale(110%);
+}
+
+@media screen and (min-width: 1281px) {
+  .card.padding2 {
+    padding: 32px;
+  }
 }
 
 @media screen and (max-width: 816px) {
