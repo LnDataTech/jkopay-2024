@@ -1,33 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
 
-@font-face {
-  font-family: 'GenJyuuGothic';
-  /* 您可以自行設定字體名稱 */
-  src: url('/fonts/GenJyuuGothic-Regular.ttf') format('truetype');
-  /* 請將檔案路徑替換為您的字體檔案路徑 */
-  font-weight: normal;
-  font-style: normal;
-}
 
-@font-face {
-  font-family: 'GenJyuuGothicBold';
-  /* 您可以自行設定字體名稱 */
-  src: url('/fonts/GenJyuuGothic-Bold.ttf') format('truetype');
-  /* 請將檔案路徑替換為您的字體檔案路徑 */
-  font-weight: bold;
-  font-style: normal;
-}
 
 :root {
   --primary-color: rgb(230, 10, 15);
   --text-color: #000;
-  --font-primary: "GenJyuuGothic", "GenJyuuGothicBold", "Noto Sans TC", "思源柔黑體", "Arial Rounded", sans-serif;
+  --font-primary: "Noto Sans JP", Helvetica, Arial, serif;
 }
 
 body {
   width: 100vw;
   max-width: 100vw;
-  font-family: 'GenJyuuGothic', sans-serif;
+  font-family: "Noto Sans JP", Helvetica, Arial, serif;
   overflow-x: hidden;
 }
 
@@ -39,7 +23,7 @@ body {
   width: 100%;
   max-width: 100vw;
   overflow-x: hidden;
-  font-family: 'GenJyuuGothic', 'GenJyuuGothicBold', Arial, sans-serif;
+  font-family: "Noto Sans JP", Helvetica, Arial, serif;
 }
 
 .heroSection {
@@ -89,7 +73,7 @@ body {
     background-size:510px 300px;
   }
   .heroSection {
-    height: 52vh;
+    height: 50vh;
   }
 }
 
@@ -169,12 +153,16 @@ body {
 }
 
 @media screen and (max-width: 816px) {
-  .contentWrapper,
   .contentWrapper2,
   .contentWrapper3,
   .contentWrapper4 {
     padding: 1em 0;
     margin: 0 auto !important;
+  }
+
+  .contentWrapper {
+    padding: 8px 0;
+    margin: 0 auto !important; 
   }
 
   .heroSection {
@@ -1086,13 +1074,10 @@ image13 {
   position: relative;
   display: flex;
   justify-content: flex-end;
-  /* Changed from space-between to flex-end */
   align-items: center;
   gap: 40px;
-  /* Increased gap for better spacing */
   z-index: 1;
   padding: 0 20px;
-  /* Added horizontal padding */
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -1105,22 +1090,19 @@ image13 {
 
 .headlineWrapper1 {
   font: 700 20px/1.6 "Noto Sans JP", Helvetica, Arial, serif;
-  color: #053657;
   letter-spacing: 1.6px;
   max-width: 45%;
-  /* Reduced max-width to bring text closer to image */
   margin-right: auto;
-  /* Pushes content to the right */
 }
 
 .headlineWrapper1_span1 {
-  font: 700 32px/1.5 "GenJyuuGothicBold", sans-serif;
+  font: 700 32px/1.5 "Noto Sans JP", Helvetica, Arial, serif;
   color: #000;
   display: block;
 }
 
 .headlineWrapper1_span0 {
-  font: 700 20px/1.6 "GenJyuuGothicBold", sans-serif;
+  font: 700 20px/1.6 "Noto Sans JP", Helvetica, Arial, serif;
   color: #e60a0f;
   display: block;
 }
@@ -2351,6 +2333,7 @@ img.card-top.phone {
   .titleContainer1 .mainHeading1 {
     font-size: 24px;
     margin-bottom: 0;
+    letter-spacing: 0;
   }
 
   /* 描述文字調整 */
@@ -3381,7 +3364,7 @@ img.card-top.phone {
   display: inline-block;
   /* 讓寬度隨內容變化 */
   position: relative;
-  font: 700 32px/1.5 "GenJyuuGothicBold";
+  font: 700 32px/1.5 "Noto Sans JP", Helvetica, Arial, serif;
   color: #000;
   text-align: left;
   letter-spacing: 2px;
@@ -3979,7 +3962,7 @@ img.card-top.phone {
   align-items: center;
   text-align: justify;
   width: 100%;
-  font-family: 'GenJyuuGothic', sans-serif;
+  font-family: "Noto Sans JP", Helvetica, Arial, serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.8;
@@ -4306,15 +4289,6 @@ img.card-top.phone {
   -o-object-fit: cover;
   object-fit: cover;
 }
-
-.divider {
-  margin: 7px 0 0 8px;
-  width: 98.27%;
-  height: 1px;
-  min-height: 1px;
-  background-color: #fdc023;
-}
-
 /*1_S3 延伸討論*/
 .challengesContainer {
   position: relative;
@@ -4328,117 +4302,8 @@ img.card-top.phone {
   /* 確保項目在電腦版時從頂部對齊 */
 }
 
-@media (max-width: 768px) {
-  .challengesContainer {
-    flex-direction: column;
-    justify-self: center;
-    align-items: center;
-  }
-
-  .Section_1_S3 .imageContainer,
-  .Section_1_S3 .contentContainer {
-    margin: auto 0;
-    width: 100%;
-    /* 當小於平板時，寬度變成100%並垂直排列 */
-
-  }
-
-}
-
 /*1_S3 延伸討論 end*/
 
-/* 3-S1 延伸討論*/
-
-.contentContainer2 {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto 15%;
-  /* 確保居中 */
-  width: 85%;
-  /* 設置總寬度 */
-  padding: 0 5%;
-  /* 左右間距 5% */
-}
-
-.textContent2 {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  /* 確保文字居中 */
-  gap: 30px 0;
-  margin: 0 auto;
-  /* 確保居中 */
-
-}
-
-.headingWrapper1 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* 確保標題居中 */
-  width: 100%;
-}
-
-.titleContainer4 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 75%, #f0eb47 75%);
-}
-
-.Section_sum .titleContainer4 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 75%, white 75%);
-}
-
-.sectionSubheading {
-  font: 700 38px/1.5 "Noto Sans JP", Helvetica, Arial, serif;
-  color: #053657;
-  text-align: center;
-  letter-spacing: 1.89px;
-}
-
-@media (max-width: 768px) {
-  .sectionSubheading {
-    font: 700 26px/1.5 "Noto Sans JP", Helvetica, Arial, serif;
-  }
-
-  .sectionMainHeading {
-    font: 700 24px/1.5 "Noto Sans JP", Helvetica, Arial, serif;
-  }
-
-  .Section_sum .titleContainer4 {
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 75%, #f0eb47 75%);
-  }
-}
-
-.sectionMainHeading {
-  font: 700 32px/1.5 "Noto Sans JP", Helvetica, Arial, serif;
-  color: #053657;
-  text-align: center;
-  letter-spacing: 1.6px;
-}
-
-.introductionText {
-  display: flex;
-  align-items: flex-start;
-  margin: 0 auto;
-  /* 確保沒有不必要的水平間距 */
-  padding-top: 0;
-  /* 去除多餘的頂部間距 */
-  font: 400 16px/1.6 "Noto Sans JP", Helvetica, Arial, serif;
-  color: black;
-  width: 90%;
-  /* 設置寬度為80% */
-  text-align: left;
-  /* 將文本對齊方式設置為左對齊 */
-
-}
-
-/* 3-S1 延伸討論end*/
 
 /* 參考用:預設佈局：Flourish 圖表 60% 左側，文字方格和圖片 40% 右側 */
 
