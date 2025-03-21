@@ -83,13 +83,37 @@ body {
   transition: transform 0.3s ease-out;
 }
 
-@media (max-width: 816px) {
-  .main * {
-    max-width: 100vw !important;
+
+@media (max-width: 480px) {
+  .bannerImage {
+    background-size:510px 300px;
+  }
+}
+
+@media (max-width: 400px) {
+  .bannerImage {
+    background-size:420px 270px;
   }
 }
 
 @media (max-width: 816px) {
+  .main * {
+    max-width: 100vw !important;
+  }
+
+  .heroSection {
+    height: 60vh;
+  }
+
+  .bannerImage {
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 1;
+    background-attachment: fixed;
+    background-position:top;
+  }
+
   .redCircle {
     background-color: rgba(0, 0, 0, 0.7);
     /* 30% 透明度的黑色背景 */
@@ -100,6 +124,12 @@ body {
     height: auto;
     position: relative;
     margin: 0;
+  }
+
+  .jkoLogo {
+    order:3 ;
+    margin-bottom: 0;
+    padding-top: 10px;
   }
 }
 
@@ -135,7 +165,7 @@ body {
   transition: transform 0.3s ease-out;
 }
 
-@media (max-width: 816px) {
+@media screen and (max-width: 816px) {
 
   .heroSection,
   .contentWrapper,
@@ -147,7 +177,8 @@ body {
   }
 
   .mainHeading1 {
-    font-size: 27px !important;
+    font-size: 24px !important;
+    text-align: center !important;
   }
 
   .subHeading,
@@ -313,8 +344,12 @@ body {
     right: 20px;
   }
 
+  .l-header-minimal {
+    padding: 5px 10px;
+  }
+
   .l-header-minimal__nav {
-    display: none;
+    display: none ;
   }
 }
 
@@ -377,6 +412,11 @@ body {
   margin-top: 24px;
   display: flex;
 }
+@media (max-width:816px) {
+  .collaborationContainer {
+    display: block;
+  }
+}
 
 .collabHeader {
   background-color: rgb(230, 10, 15);
@@ -387,6 +427,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.6s ease;
 }
 
 .collabHeader.about {
@@ -398,6 +439,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.collaborationContainer:hover .collabHeader.about {
+  background-color: #34b7af;
+}
+
+@media (max-width:480px) {
+  .collabHeader.about {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .collabDescription.about {
+    width: 90% !important;
+    margin: 0 auto;
+  }
 }
 
 .collabHeader h3 {
@@ -426,7 +482,7 @@ body {
   transition: all 0.6s ease;
 }
 
-.collabDescription.about:hover {
+.collaborationContainer:hover .collabDescription.about {
   min-height: 136px;
   line-height: 1.8;
 }
@@ -599,6 +655,12 @@ body {
   width: 100%;
   gap: 10px;
   margin: 5px 1rem 5px 0;
+}
+
+@media screen and (max-width: 816px) {
+  .stats-grid {
+    margin: 5px auto;
+  }
 }
 
 /* 左側區塊 (兩個方格) */
@@ -850,23 +912,22 @@ body {
   }
 
   .discussionSection.gray {
-    margin-bottom: 2rem;
+    padding: 1rem 0;
+    margin-bottom: 0;
   }
 
-  .discussionSection.card-section,
-  .discussionSection.case {
+  .discussionSection.card-section {
     margin-bottom: 1rem;
+  }
+  .discussionSection {
+    padding: 1rem 0 !important;
   }
 }
 
 @media (max-width: 816px) {
-  .discussionSection {
-    margin-left: 1rem;
-    margin-bottom: 5rem;
-  }
 
-  .imageContainerdata {
-    margin-left: 1rem;
+  .discussionSection.start {
+    padding: 0 1.5rem !important;
   }
 
   .discussionSection .contentContainerdata {
@@ -1771,6 +1832,13 @@ image13 {
   cursor: pointer;
 }
 
+@media (max-width: 816px) {
+  .qaSection {
+    width: 90%;
+    margin: 0 10%;
+  }
+}
+
 .qaItem {
   margin-top: 20px;
   margin-bottom: 30px;
@@ -2075,6 +2143,14 @@ img.card-top.phone {
     width: 75% !important;
   }
 }
+@media screen and (max-width: 816px) {
+  img.card-top.phone {
+    width: 90% !important;
+  }
+  .card-top {
+    padding-top:0;
+  }
+}
 
 /* 卡片底部圖片 */
 .card-bottom {
@@ -2219,6 +2295,9 @@ img.card-top.phone {
   .card-right .chart-wrapper2 {
     margin: 0;
   }
+  .card-right .description {
+    padding: 0;
+  }
 }
 
 
@@ -2250,7 +2329,7 @@ img.card-top.phone {
   /* 標題容器調整 */
   .titleContainer1 {
     padding: 0;
-    margin-left: 0 !important;
+    margin:0 auto;
   }
 
   /* 標題文字大小調整 */
@@ -2260,7 +2339,7 @@ img.card-top.phone {
   }
 
   .titleContainer1 .mainHeading1 {
-    font-size: 20px;
+    font-size: 24px;
     margin-bottom: 0;
   }
 
@@ -2303,7 +2382,9 @@ img.card-top.phone {
   }
 
   .success .card-indicatorRow2 {
-    bottom: 0;
+    bottom: 6px;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
   }
 
   .card-right .flourish-embed {
@@ -2320,11 +2401,7 @@ img.card-top.phone {
   }
 
   .card-right {
-    padding: 1rem;
-  }
-
-  .titleContainer1 .mainHeading1 {
-    font-size: 18px;
+    padding: 1rem 1rem 1rem 2rem;
   }
 
   .description {
@@ -2469,7 +2546,9 @@ img.card-top.phone {
 }
 
 @media screen and (max-width: 816px) {
-
+  .stats-summary {
+    min-width: 360px; 
+  }
   /* 容器改為垂直排列 */
   .stats-container {
     flex-direction: column;
@@ -2487,7 +2566,7 @@ img.card-top.phone {
     margin-left: 0;
     margin-top: 40px;
     border-left: none;
-    border-top: 2px solid #E60A0F;
+    border-top: 1px solid #E60A0F;
     padding-top: 30px;
   }
 
@@ -2598,7 +2677,7 @@ img.card-top.phone {
 
 @media screen and (max-width: 816px) {
   .imageContainer.card {
-    width: 100%;
+    width: 90%;
     max-height: 150vh !important;
     overflow-y: visible;
 
@@ -2764,7 +2843,7 @@ img.card-top.phone {
     width: 100%;
     justify-content: center;
     gap: 8px;
-    padding: 0 16px;
+    padding: 3px 6px;
   }
 
   /* 調整標題容器 */
@@ -2810,6 +2889,10 @@ img.card-top.phone {
   padding: 6rem 2rem;
 }
 
+.contentContainer.sticky .titleContainer {
+  width: auto;
+}
+
 .imageContainer.family {
   justify-content: start;
 }
@@ -2819,6 +2902,21 @@ img.card-top.phone {
   background-color: #d83838;
   color: white;
   padding: 2rem;
+}
+
+
+.contentContainer.richart {
+  padding:10% 0;
+}
+@media (max-width: 1024px) {
+  .contentContainer.richart {
+    padding-top: 20%;
+  }
+}
+@media (max-width: 1024px) {
+  .contentContainer.richart {
+    padding-top: 23%;
+  }
 }
 
 
@@ -3268,7 +3366,6 @@ img.card-top.phone {
   display: inline-block;
   /* 讓寬度隨內容變化 */
   position: relative;
-  /* 為了使用絕對定位的底線 */
   font: 700 32px/1.5 "GenJyuuGothicBold";
   color: #000;
   text-align: left;
@@ -3395,7 +3492,13 @@ img.card-top.phone {
   align-items: flex-end;
   justify-content: flex-start;
   width: 100%;
-  margin-left: 1.5rem;
+  margin: 0 0.5rem;
+}
+
+@media (max-width: 816px) {
+  .imageContainerdata {
+    margin: 0 auto;
+  }
 }
 
 .imageContainer1 {
@@ -3570,6 +3673,15 @@ img.card-top.phone {
   }
   .contentContainer.cardtop::before {
     height: 7rem;
+  }
+}
+
+@media (max-width: 816px) {
+  .contentContainer.cardtop {
+    transform: translateY(-2%);
+  }
+  .chart-wrapper2:hover .contentContainer.cardtop {
+    transform: translateY(8%);
   }
 }
 
@@ -3959,11 +4071,6 @@ img.card-top.phone {
     margin: 0;
   }
 
-  .titleContainer1 {
-    padding: 20px;
-    text-align: center;
-  }
-
   .imageContainer {
     width: 100%;
     text-align: center;
@@ -3989,7 +4096,7 @@ img.card-top.phone {
 
   .titleContainer1 {
     padding: 5px;
-    margin: 1.5rem auto;
+    width: 90%;
   }
 
   .titleContainer1.top3 {
@@ -4315,6 +4422,7 @@ img.card-top.phone {
     flex-direction: column;
     align-items: center;
     padding: 0;
+    margin-bottom: 2rem;
   }
 
   /* 在 CSS 中使用新的 class */
@@ -4964,9 +5072,9 @@ img.card-top.phone {
   transition: all 0.6s ease;
 }
 
-@media (max-width: 479px) {
+@media (max-width: 480px) {
   .companyDescription {
-    font: 700 14px/2.4 "Noto Sans JP", Helvetica, Arial, serif;
+    font: 400 14px/2 "Noto Sans JP", Helvetica, Arial, serif;
     text-align: justify;
   }
 }
