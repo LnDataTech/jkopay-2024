@@ -4728,7 +4728,7 @@ img.card-top.phone {
 
 /* 說明文字容器 */
 .description-container {
-  margin-top: 15px;
+  margin-top: 12px;
   display: flex;
   flex-direction: row;
   gap: 5%;
@@ -4736,6 +4736,7 @@ img.card-top.phone {
 
 .description-text {
   font-size: 14px;
+  flex: 1 1 ;
   line-height: 1.5;
   margin-bottom: 10px;
 }
