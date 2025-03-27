@@ -3054,7 +3054,7 @@ img.card-top.phone {
 
 
   .top3-circles {
-    gap: 1.5rem;
+    gap: 1rem;
     max-width: 300px;
     margin: 1rem auto;
   }
@@ -3077,6 +3077,7 @@ img.card-top.phone {
 @media (max-width: 480px) {
   .top3-container {
     width: 100%;
+    gap:12px;
   }
 
   .top-circle {
@@ -3290,6 +3291,13 @@ img.card-top.phone {
   top: 0;
   width: 60%;
   z-index: 0;
+  animation-delay: 0s;
+  transition: transform 0.6s ease-in;
+}
+
+.autoplay {
+  animation: fadeCycle 6s infinite;
+  transition: all 0.6s ease !important;
 }
 
 .account-2 {
@@ -3299,16 +3307,29 @@ img.card-top.phone {
   z-index: 1;
   border-radius: 15px;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.15);
+  animation-delay: 3s;
+  transition: transform 0.6s ease-in;
 }
 
+.account-2:hover,
 .account-1:hover {
-  z-index: 2;
-  transform: scale(1.05);
+  z-index: 99 !important;
+  transform: scale(1.05) !important;
+  opacity: 1 !important;
 }
 
-.account-2:hover {
-  z-index: 2;
-  transform: scale(1.05);
+/* 動畫設定：前半段顯示、後半段隱藏 */
+@keyframes fadeCycle {
+  0%, 45% {
+    opacity: 1;
+    z-index: 2;  /* 顯示時置頂 */
+    transform: scale(1);
+  }
+  55%, 100% {
+    opacity: 0.5;
+    z-index: 1;  /* 隱藏時在下 */
+    transform: scale(0.95);
+  }
 }
 
 
@@ -3805,12 +3826,14 @@ img.card-top.phone {
   box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.5);
 }
 
+.bdrdis,
 .screenshotImage.bdrdis {
-  border-radius: 16px;
+  border-radius: 16px !important;
 }
 
+.bdrdis,
 .screenshotImage.bdrdis:hover {
-  border-radius: 8px;
+  border-radius: 8px !important;
 }
 
 .img-caption {
