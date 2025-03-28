@@ -2013,21 +2013,22 @@ image13 {
 }
 
 .chart-wrapper2 .innerWrapper {
-  min-width: 98%;
-  max-height: 100%;
+  min-width: 96%;
+  max-height: 80vh;
   padding: 0;
   display: block;
 }
 
 .innerWrapper .flourish-embed {
-  transform: scale(0.9);
+  transform: scale(0.88);
   transform-origin: top center;
   /* 確保從頂部開始縮放 */
-  margin: 0;
+  margin: 0 auto;
   /* 水平置中 */
-  width: 100% !important;
+  width: 94% !important;
   position: relative;
   top: 0;
+  max-height: 72vh;
 }
 
 .chart-wrapper2 h3 {
