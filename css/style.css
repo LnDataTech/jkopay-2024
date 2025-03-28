@@ -2230,8 +2230,11 @@ img.card-top.phone {
 
 /* 媒體查詢部分 */
 @media screen and (min-width:1281px) {
-  .card-left .image-container {
+  .row2 .card-left .image-container {
     min-height: 496px;
+  }
+  .card-left .image-container {
+    min-height: 400px;
   }
 }
 
@@ -2272,8 +2275,12 @@ img.card-top.phone {
 .card-right {
   width: 62%;
   height: 100%;
+  min-height: 38vh;
   padding: 2rem;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .card-right .chart-wrapper {
@@ -2300,8 +2307,7 @@ img.card-top.phone {
     padding: 2rem 0;
   }
   .card-right .description {
-    font-size: 18px;
-    line-height: 36px;
+    line-height: 28px;
   }
 }
 
@@ -3331,9 +3337,13 @@ img.card-top.phone {
 
 .overlapping-images {
   position: relative;
-  width: 100%;
+  width: 100% !important;
+  max-width: 100% !important;
   height: 300px;
-  margin: 2rem 0;
+  margin: 2rem 0 !important;
+  background-color: rgba(0, 0, 0, 0) !important;
+  box-shadow: none !important;
+  padding: 0 !important;
 }
 
 @media (max-width: 816px) {
@@ -3834,7 +3844,7 @@ img.card-top.phone {
 /* 文字方格的格式  */
 .titleContainer1 h3,
 .contentContainer h3 {
-  font: 700 20px/1.5 "GenJyuuGothic", Helvetica, Arial, serif;
+  font: 700 20px/1.5 "Noto Sans JP", Helvetica, Arial, serif;
   color: #000;
 }
 
@@ -3850,7 +3860,7 @@ img.card-top.phone {
 
 /* 文字方格的格式  */
 .contentContainerdata h3 {
-  font: 700 20px/1.5 "GenJyuuGothic", Helvetica, Arial, serif;
+  font: 700 20px/1.5 "Noto Sans JP", Helvetica, Arial, serif;
   color: #000;
 }
 
@@ -4063,7 +4073,7 @@ img.card-top.phone {
   justify-content: center;
   align-items: center;
   margin: 0 0 6px;
-  font: 700 20px/1.5 "GenJyuuGothic", Helvetica, Arial, serif;
+  font: 700 20px/1.5 "Noto Sans JP", Helvetica, Arial, serif;
   color: #053657;
   text-align: center;
 }
@@ -4148,6 +4158,11 @@ img.card-top.phone {
   .chart-wrapper.pay {
     margin: 0;
     height: 30vh;
+  }
+
+  .Description,
+  .statisticsDescription {
+    font-family: "Noto Sans", Helvetica, Arial, serif;
   }
 }
 
@@ -5020,7 +5035,7 @@ img.card-top.phone {
   display: flex;
   justify-content: center;
   align-items: center;
-  font: 700 32px/1.5 "GenJyuuGothicBold";
+  font: 700 32px/1.5 "Noto Sans JP", Helvetica, Arial, serif;
   color: #000;
   text-align: center;
   letter-spacing: 1.6px;
