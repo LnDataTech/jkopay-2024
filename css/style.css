@@ -2213,6 +2213,7 @@ img.card-top.phone {
 .card-left .background-image {
   width: 100%;
   height: 100%;
+  max-height: 300px;
   object-fit: cover;
   z-index: 1;
   margin: 0;
@@ -2242,13 +2243,15 @@ img.card-top.phone {
 @media screen and (max-width: 816px) {
   .card-left {
     width: 100%;
+    max-width: 92vw;
     min-height: 200px;
     border-radius: 10px 10px 0 0;
     margin: 0 auto;
   }
 
   .card-left .tag {
-    margin-left: 0;
+    margin-left: 2%;
+    margin-top: 1%;
   }
 
   /* 背景圖片樣式 */
@@ -2265,6 +2268,7 @@ img.card-top.phone {
 @media screen and (max-width: 480px) {
   .card-left {
     min-height: 180px;
+    max-width: 90vw;
   }
 
   img.card-top {
@@ -2287,7 +2291,6 @@ img.card-top.phone {
 .card-right .chart-wrapper {
   width: 100%;
   margin: 0 auto;
-  /* Center the chart */
 }
 
 .card-right .chart-wrapper2 {
@@ -2325,9 +2328,7 @@ img.card-top.phone {
 /* Flourish chart container */
 .card-right .flourish-embed {
   transform: scale(0.8);
-  /* Reduces size to 50% */
   transform-origin: center center;
-  /* Centers the scaling */
   margin-top: -10%;
   margin-bottom: -10%;
 }
@@ -2388,7 +2389,8 @@ img.card-top.phone {
   /* 指示器位置調整 */
   .card-indicatorRow2 {
     bottom: 0;
-    left: 45%;
+    left: 45% !important;
+    transform: translateX(0%) !important;
   }
 
   .card-right .flourish-embed {
@@ -2423,7 +2425,8 @@ img.card-top.phone {
   }
 
   .card-right {
-    padding: 1rem 1rem 1rem 2rem;
+    padding: 1rem 1rem 1rem 1.2rem;
+    max-width: 95vw !important;
   }
 
   .description {
@@ -2437,7 +2440,7 @@ img.card-top.phone {
   }
 
   .card-right .chart-wrapper {
-    margin-bottom: 20%;
+    margin-bottom: 5%;
   }
 }
 
