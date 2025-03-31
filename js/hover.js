@@ -79,12 +79,12 @@ window.addEventListener("scroll", function () {
         // 當 index 為 0，新增 "active" 類別，否則移除
         if (index === 0) {
             cardBottom.classList.add('active');
-            cardBottom.style.width = '36.3%';
-            cardBottom.style.height = '60%';
+            cardBottom.style.width = '37.2%';
+            cardBottom.style.height = '52%';
         } else {
             cardBottom.classList.remove('active');
             cardBottom.style.width = '33%';
-            cardBottom.style.transform = 'translateX(-2.7%)';
+            cardBottom.style.transform = 'translateX(-4.9%)';
         }
     });
 });
@@ -124,8 +124,9 @@ window.addEventListener("scroll", function () {
   });
 
 
+
 function initializeBarProgress() {
-  // 設定長條的寬度
+ // 設定長條的寬度
   document.querySelectorAll('.bar').forEach(bar => {
     const value = bar.getAttribute('data-value'); // 例如 "3.3" 等
     bar.style.width = `${value * 2}%`;
