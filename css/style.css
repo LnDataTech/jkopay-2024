@@ -3112,12 +3112,11 @@ img.card-top.phone {
 .bar-chart {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
   position: relative;
   z-index: 10;
   align-items: center;
 }
-
 
 
 .bar-container {
@@ -3150,44 +3149,51 @@ img.card-top.phone {
   line-height: 50px;
   font-size: 14px;
   flex-shrink: 0;
-  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
   transition: all 0.6s ease;
-  box-shadow: -3px -3px 15px rgba(0, 0, 0, 0.12) inset;
 }
 
 /* 依據不同層級設定寬度與背景色（可依需求調整） */
 .bar-container:nth-child(1) .bar-shadow {
-  width: 18%;
+  width: 12%;
 }
 .bar-container:nth-child(2) .bar-shadow {
-  width: 30%;
+  width: 24%;
 }
 .bar-container:nth-child(3) .bar-shadow {
-  width: 42%;
+  width: 38%;
 }
 .bar-container:nth-child(4) .bar-shadow {
-  width: 54%;
+  width: 52%;
 }
 .bar-container:nth-child(5) .bar-shadow {
-  width: 67%;
+  width: 68%;
 }
 
+.bar-container:nth-child(1) .bar {
+  clip-path: polygon(50% 0% , 100% 100%, 0% 100% );
+}
+
+.bar-container:nth-child(1) .bar-shadow {
+  clip-path: polygon(43% 0%,54% 0% , 100% 100%, 0% 100% );
+}
+
+/*
 .bar-container:nth-child(1) .label  {
-  background-color: #3e3a39; /* 紅色 */
+  background-color: #3e3a39;
 }
 .bar-container:nth-child(2) .label  {
-  background-color: #cbe9f6; /* 橘色 */
+  background-color: #cbe9f6; 
 }
 .bar-container:nth-child(3) .label  {
-  background-color: #f9c32e; /* 黃色 */
+  background-color: #f9c32e;
 }
 .bar-container:nth-child(4) .label {
-  background-color: #8f8f8f; /* 綠色 */
+  background-color: #8f8f8f;
 }
 .bar-container:nth-child(5) .label  {
-  background-color: #b84e3e; /* 藍色 */
+  background-color: #b84e3e; 
 }
-
+*/
 /* 每個長條 */
 .bar {
   background-color: #EC6060;
@@ -3196,7 +3202,7 @@ img.card-top.phone {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.6s ease;
-  clip-path: polygon(15px 0%, calc(100% - 15px) 0% , 100% 100%, 0% 100% );
+  clip-path: polygon(20px 0%, calc(100% - 20px) 0% , 100% 100%, 0% 100% );
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -3219,7 +3225,7 @@ img.card-top.phone {
   left: 51%;
   transform: translateX(-50%);
   height: 100%;
-  clip-path: polygon(15px 0%, calc(100% - 15px) 0% , 100% 100%, 0% 100% );
+  clip-path: polygon(20px 0%, calc(100% - 20px) 0% , 100% 100%, 0% 100% );
   background-color: rgb(72, 72, 72);
   opacity: 0.8;
   pointer-events: none;
@@ -3249,17 +3255,43 @@ img.card-top.phone {
 }
 
 .bar-container:nth-child(odd):hover .label {
-  clip-path: circle(50% at center);
   transform: translateX(10%);
 }
 .bar-container:nth-child(even):hover .label {
-  clip-path: circle(50% at center);
   transform: translateX(-10%);
 }
 
 @media screen and (max-width: 816px) {
   .value-label {
     display: none;
+  }
+  .bar-container:nth-child(even) {
+    flex-direction: row;
+  }
+  .label {
+    width: 0;
+    margin: 0;
+    z-index: 99;
+    transform: translateX(-1rem);
+  }
+  .label img {
+    margin: 0 !important;
+    min-width: 40px;
+    z-index: 99;
+  }
+  .bar-container:nth-child(odd):hover .label,
+  .bar-container:nth-child(even):hover .label {
+    transform: translateX(-2rem) !important;
+  }
+  .bar-shadow {
+    left: 54%;
+    transform: translateX(-50%);
+  }
+  .bar-container:nth-child(5) .bar-shadow {
+    width: 75%;
+  }
+  .bar-container:nth-child(1) .bar-shadow {
+    clip-path: polygon(50% 0% , 100% 100%, 0% 100% );
   }
 }
 
