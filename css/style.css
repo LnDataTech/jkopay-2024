@@ -11,6 +11,16 @@ h1,h2,h3,h4,p,span {
   --font-primary: 'Noto Sans JP', 'Noto Sans TC', '思源黑體', 'Microsoft JhengHei', Arial, sans-serif ;
 }
 
+html {
+  max-width: 100vw;
+  overflow-x: hidden !important;
+}
+
+img, a {
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
 body {
   width: 100vw;
   max-width: 100vw;
@@ -92,6 +102,18 @@ body {
 @media (max-width: 816px) {
   .main * {
     max-width: 100vw !important;
+  }
+
+  /* 全域 box-sizing 設定 */
+*, *::before, *::after {
+    box-sizing: border-box;
+    max-width: 100%;  /* 防止元素超出容器寬度 */
+  }
+
+  img, table, pre, code {
+    max-width: 100%;
+    height: auto;
+    word-wrap: break-word;
   }
 
   .heroSection {
