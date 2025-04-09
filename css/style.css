@@ -906,6 +906,9 @@ body {
     width: 48px;
     height: 48px;
   }
+  .icon img {
+    transform: translateY(-4px);
+  }
 }
 
 /* 更小的螢幕 */
