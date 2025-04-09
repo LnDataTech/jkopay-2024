@@ -105,12 +105,12 @@ body {
   }
 
   /* 全域 box-sizing 設定 */
-*, *::before, *::after {
+.inner * {
     box-sizing: border-box;
     max-width: 100%;  /* 防止元素超出容器寬度 */
   }
 
-  img, table, pre, code {
+  img, table, code {
     max-width: 100%;
     height: auto;
     word-wrap: break-word;
